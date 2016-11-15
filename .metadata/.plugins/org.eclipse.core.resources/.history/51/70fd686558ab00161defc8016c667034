@@ -1,0 +1,23 @@
+public class Main
+{
+	public static final int KEY_DELAY = 50;
+	public static final int FRAME_DELAY = 50;
+	public static final int BLOCK_WIDTH = 64;
+	public static final int BLOCKS_LEFT = 5;
+	public static final int BLOCKS_UP = 3;
+	public static final int MAP_WIDTH = 20;
+	public static final int MAP_HEIGHT = 15;
+	
+	//Sprite info
+	public static final int NUM_SPRITES = 3; //Total number of sprites
+	public static final int BLOCK_AIR = 0;
+	public static final int BLOCK_WALL = 1;
+	public static final int SPRITE_PLAYER = 2;
+	
+	public static Room currentRoom = new Room();
+	
+	public static void main(String [] args)
+	{
+		new IO();
+	}
+}

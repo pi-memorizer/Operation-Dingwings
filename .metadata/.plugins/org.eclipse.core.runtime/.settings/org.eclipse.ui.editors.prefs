@@ -34,6 +34,7 @@ org.eclipse.cdt.ui.overrideIndicatorColor=80,124,121
 org.eclipse.cdt.ui.writeOccurrenceIndicationColor=151,103,74
 overrideIndicatorColor=78,120,117
 overrideIndicatorColorForPHP=72,113,109
+overviewRuler_migration=migrated_3.1
 printMarginColor=98,98,98
 pydevOccurrenceIndicationColor=72,72,72
 searchResultHighlighting=false

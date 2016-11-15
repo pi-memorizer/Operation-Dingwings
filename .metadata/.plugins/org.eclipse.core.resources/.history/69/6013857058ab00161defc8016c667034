@@ -1,0 +1,40 @@
+public class Player
+{
+	public static int xCoord = Main.MAP_WIDTH/2;
+	public static int yCoord = Main.MAP_HEIGHT/2;
+	
+	public static void moveUp()
+	{
+		move(0,-1);
+	}
+	
+	public static void moveLeft()
+	{
+		move(-1,0);
+	}
+	
+	public static void moveRight()
+	{
+		move(1,0);
+	}
+	
+	public static void moveDown()
+	{
+		move(0,1);
+	}
+	
+	public static void move(int dx, int dy)
+	{
+		int x = xCoord+dx;
+		int y = yCoord+dy;
+		if(x>=0&&y>=0&&x<Main.MAP_WIDTH&&y<Main.MAP_HEIGHT)
+		{
+			if(Main.currentRoom.map[x][y]==Main.BLOCK_AIR)
+			{
+				xCoord = x;
+				yCoord = y;
+			}
+		}
+		System.out.println(xCoord + ", " + yCoord);
+	}
+}
