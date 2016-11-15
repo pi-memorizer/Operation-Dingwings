@@ -26,9 +26,9 @@ public class Main
 	public static void main(String [] args)
 	{
 		IO io = new IO(); //Get the graphics and key press handling
-		io.tryImg(BLOCK_AIR, "air"); //do this for all sprites, assuming it is in "images/air.png"
-		io.tryImg(BLOCK_WALL, "wall");
-		io.tryImg(SPRITE_PLAYER, "player");
+		io.tryImg(BLOCK_AIR, "Air"); //do this for all sprites, assuming it is in "images/air.png"
+		io.tryImg(BLOCK_WALL, "Wall");
+		io.tryImg(SPRITE_PLAYER, "Player-J");
 		
 		while(true) //Game loop
 		{
