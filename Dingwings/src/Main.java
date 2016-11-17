@@ -1,5 +1,6 @@
 public class Main
 {
+	//Reece changing stuff
 	public static final int KEY_DELAY = 50; //Minimum amount of milliseconds to wait before accepting key
 	public static final int FRAME_DELAY = 50; //Milliseconds per frame
 	public static final int BLOCK_WIDTH = 64; //Pixel width of sprites
