@@ -7,7 +7,7 @@ public class Room
 	public Room()
 	{
 		//initialize with walls on all sides
-		/*
+		
 		for(int x = 0; x < Main.MAP_WIDTH; x++)
 		{
 			for(int y = 0; y < Main.MAP_HEIGHT; y++)
@@ -18,7 +18,7 @@ public class Room
 					map[x][y] = Main.BLOCK_AIR;
 			}
 		}
-		*/
+		
 		//initialize with walls on all sides but top has pathway
 		/*
 				for(int x = 0; x < Main.MAP_WIDTH; x++)
