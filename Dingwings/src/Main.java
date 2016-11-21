@@ -54,7 +54,7 @@ public class Main
 	}
 	
 	//What to do when the player runs out of lives
-	public static void endGame();
+	public static void endGame()
 	{
 		//Player.die();
 		//Maybe show and end screen that has an option for restart and one for quit
