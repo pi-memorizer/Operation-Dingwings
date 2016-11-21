@@ -18,5 +18,4 @@ public abstract class Enemy
 	{
 		//delete enemy out of list and therefore stop drawing?
 	}
-
 } //end Enemy class

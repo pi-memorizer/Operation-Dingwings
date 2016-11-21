@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Room
 {
 	int [][] map = new int[Main.MAP_WIDTH][Main.MAP_HEIGHT]; //The rooms map arraw of sprite indices
@@ -16,4 +18,7 @@ public class Room
 			}
 		}
 	}
+	HashMap <Integer, Room> roomMap = new HashMap <Integer, Room>();
+	// add room to hashamp (each room is predetermined
+	// once we enter a new room, generate room from hashmap and randomly generated number of exits
 }
