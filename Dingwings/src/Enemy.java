@@ -14,6 +14,8 @@ public abstract class Enemy
 	
 	protected abstract void move(); //each enemy will have its own movement type
 	
+	protected abstract void attack(); //each enemy will have its own attack, but some may not
+	
 	protected void removeEnemy()
 	{
 		//delete enemy out of list and therefore stop drawing?
