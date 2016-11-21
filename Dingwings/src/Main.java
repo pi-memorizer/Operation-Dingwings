@@ -38,6 +38,11 @@ public class Main
 			
 			//TODO game loop logic here
 			
+			//if player touches enemy or player touches projectile
+				//player.loselife
+			//if player.lives == 0
+				//endGame();
+			
 			long c_ = System.currentTimeMillis(); //Time at which frame ended
 			if(c_-_c<FRAME_DELAY) //Frame lock magic
 			{
@@ -46,5 +51,12 @@ public class Main
 				} catch(Exception e) {}
 			}
 		}
+	}
+	
+	//What to do when the player runs out of lives
+	public static void endGame();
+	{
+		//Player.die();
+		//Maybe show and end screen that has an option for restart and one for quit
 	}
 }
