@@ -39,8 +39,11 @@ public class Player
 				yCoord = y;
 			}
 		} //TODO add code to which rooms if you walk out
-		if ((x<=0 || y<=0 || x>= Main.MAP_WIDTH || y>= Main.MAP_HEIGHT) && Main.currentRoom.map[x][y]==Main.BLOCK_AIR)
+		if ((x<=0 || y<=0 || x>= Main.MAP_WIDTH -1|| y>= Main.MAP_HEIGHT - 1) && Main.currentRoom.map[x][y]==Main.BLOCK_AIR)
 		{
+			//Room newRoom = new Room();
+				//random number generator, depending on number generated, 
+				// create room with certain sides open
 			xCoord = Main.MAP_WIDTH/2;
 			yCoord = Main.MAP_HEIGHT/2;
 		}
