@@ -2,9 +2,12 @@
 public class Chaser extends Enemy 
 {
 	
-	public Chaser() 
+	public Chaser(int x, int y) 
 	{
+		//health = 3, damage = 1, moveSpeed = 1
 		super(3, 1, 1);
+		super.xCoord = x;
+		super.yCoord = y;
 	}
 	
 	protected void move()
@@ -15,6 +18,7 @@ public class Chaser extends Enemy
 		 * pause
 		 * repeat
 		 */
+		
 	}
 	
 	protected void attack()

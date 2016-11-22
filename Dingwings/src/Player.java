@@ -1,5 +1,7 @@
 public class Player
 {
+	public static int health = 5;
+	
 	public static int xCoord = Main.MAP_WIDTH/2; //The player's position in the x direction
 	public static int yCoord = Main.MAP_HEIGHT/2; //Same for y
 	//TODO implement coordinates for which room the player is in
@@ -31,7 +33,7 @@ public class Player
 	{
 		int x = xCoord+dx;
 		int y = yCoord+dy;
-		if(x>=0&&y>=0&&x<Main.MAP_WIDTH&&y<Main.MAP_HEIGHT) //make sure that's vaild
+		if(x >=0 && y>=0 && x<Main.MAP_WIDTH && y<Main.MAP_HEIGHT) //make sure that's vaild
 		{
 			if(Main.currentRoom.map[x][y]==Main.BLOCK_AIR) //see if you can walk there
 			{
