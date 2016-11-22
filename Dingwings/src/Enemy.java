@@ -4,12 +4,14 @@ public abstract class Enemy
 	protected int health;
 	protected boolean active;
 	protected int damage;
+	protected int moveSpeed; //assuming player move = 1
 	
-	public Enemy(int h, int d) //constructor to set health, damage,
+	public Enemy(int h, int d, int m) //constructor to set health, damage,
 	{										// and the enemy to alive
 		health = h;
 		active = true;
 		damage = d;
+		moveSpeed = m;
 	}
 	
 	protected abstract void move(); //each enemy will have its own movement type
