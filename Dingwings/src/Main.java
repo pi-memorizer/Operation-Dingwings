@@ -7,7 +7,7 @@ public class Main
 	public static final int BLOCKS_LEFT = 5; //Amount of blocks to the left and right of the player
 	public static final int BLOCKS_UP = 3; //Amount of blocks to the top and bottom of the player
 	public static final int MAP_WIDTH = 20; //Map array length
-	public static final int MAP_HEIGHT = 15; //Map array height
+	public static final int MAP_HEIGHT = 20; //Map array height
 	
 	//Sprite info
 	public static final int NUM_SPRITES = 3; //Total number of sprites

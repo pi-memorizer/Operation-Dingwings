@@ -39,6 +39,11 @@ public class Player
 				yCoord = y;
 			}
 		} //TODO add code to which rooms if you walk out
+		if ((x<=0 || y<=0 || x>= Main.MAP_WIDTH || y>= Main.MAP_HEIGHT) && Main.currentRoom.map[x][y]==Main.BLOCK_AIR)
+		{
+			xCoord = Main.MAP_WIDTH/2;
+			yCoord = Main.MAP_HEIGHT/2;
+		}
 	}
 	
 	//Code to call when the attack key is pressed
