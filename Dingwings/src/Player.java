@@ -45,6 +45,7 @@ public class Player
 				xCoord = Main.MAP_WIDTH/2;
 				yCoord = Main.MAP_HEIGHT/2;
 				Room newRoom = new Room();
+				Main.currentRoom = newRoom;
 			}
 		} //TODO add code to which rooms if you walk out
 	}
