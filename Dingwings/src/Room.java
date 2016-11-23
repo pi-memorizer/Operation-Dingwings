@@ -36,6 +36,8 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if (y == 0 && x!=Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==0 && x==Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -49,8 +51,10 @@ public class Room
 							map[x][y] = Main.BLOCK_WALL;
 						else
 							map[x][y] = Main.BLOCK_AIR;
-						if ( y== Main.MAP_HEIGHT - 1 && x != Main.MAP_WIDTH/2)
+						if (y== Main.MAP_HEIGHT - 1 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y== Main.MAP_HEIGHT - 1 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -64,8 +68,10 @@ public class Room
 							map[x][y] = Main.BLOCK_WALL;
 						else
 							map[x][y] = Main.BLOCK_AIR;
-						if ( x==0 && y!= Main.MAP_HEIGHT/2)
+						if (x==0 && y!= Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y== Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -79,8 +85,10 @@ public class Room
 							map[x][y] = Main.BLOCK_WALL;
 						else
 							map[x][y] = Main.BLOCK_AIR;
-						if ( x == Main.MAP_WIDTH - 1 && y != Main.MAP_HEIGHT/2)
+						if (x == Main.MAP_WIDTH - 1 && y != Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x == Main.MAP_WIDTH - 1 && y == Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -96,8 +104,12 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( y== Main.MAP_HEIGHT - 1 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y== Main.MAP_HEIGHT - 1 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (y==0 && x!=Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==0 && x==Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -113,8 +125,12 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( y== Main.MAP_HEIGHT - 1 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y== Main.MAP_HEIGHT - 1 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==0 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -130,8 +146,12 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( x== Main.MAP_WIDTH - 1 && y != Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x== Main.MAP_WIDTH - 1 && y == Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==0 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -147,8 +167,12 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( y==0 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==0 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==0 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -164,8 +188,12 @@ public class Room
 								map[x][y] = Main.BLOCK_AIR;
 							if ( y==0 && x != Main.MAP_WIDTH/2)
 								map[x][y] = Main.BLOCK_WALL;
+							if (y==0 && x == Main.MAP_WIDTH/2)
+								map[x][y] = Main.BLOCK_DOOR;
 							if (x==Main.MAP_WIDTH - 1 && y!=Main.MAP_HEIGHT/2)
 								map[x][y] = Main.BLOCK_WALL;
+							if (x==Main.MAP_WIDTH - 1 && y==Main.MAP_HEIGHT/2)
+								map[x][y] = Main.BLOCK_DOOR;
 						}
 					}
 					break;
@@ -181,8 +209,12 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( y==Main.MAP_HEIGHT-1 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==Main.MAP_HEIGHT-1 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==Main.MAP_WIDTH - 1 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==Main.MAP_WIDTH - 1 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -198,10 +230,16 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( y== Main.MAP_HEIGHT - 1 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y== Main.MAP_HEIGHT - 1 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (y==0 && x!=Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==0 && x==Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==Main.MAP_WIDTH-1 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==Main.MAP_WIDTH-1 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -217,10 +255,16 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if ( y== Main.MAP_HEIGHT - 1 && x != Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y== Main.MAP_HEIGHT - 1 && x == Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (y==0 && x!=Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==0 && x==Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==0 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -236,10 +280,16 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if (y== Main.MAP_HEIGHT-1 && x!=Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y== Main.MAP_HEIGHT-1 && x==Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==Main.MAP_WIDTH-1 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==Main.MAP_WIDTH-1 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==0 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;
@@ -255,10 +305,16 @@ public class Room
 							map[x][y] = Main.BLOCK_AIR;
 						if (y==0 && x!=Main.MAP_WIDTH/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (y==0 && x==Main.MAP_WIDTH/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==Main.MAP_WIDTH-1 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==Main.MAP_WIDTH-1 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 						if (x==0 && y!=Main.MAP_HEIGHT/2)
 							map[x][y] = Main.BLOCK_WALL;
+						if (x==0 && y==Main.MAP_HEIGHT/2)
+							map[x][y] = Main.BLOCK_DOOR;
 					}
 				}
 				break;

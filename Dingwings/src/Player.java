@@ -40,17 +40,13 @@ public class Player
 				xCoord = x; //actually move
 				yCoord = y;
 			}
-			else
+			else if (Main.currentRoom.map[x][y]==Main.BLOCK_DOOR)
 			{
+				xCoord = Main.MAP_WIDTH/2;
+				yCoord = Main.MAP_HEIGHT/2;
 				Room newRoom = new Room();
 			}
 		} //TODO add code to which rooms if you walk out
-		if ((x<0 || y<0 || x> Main.MAP_WIDTH -1|| y> Main.MAP_HEIGHT - 1) && Main.currentRoom.map[x][y]==Main.BLOCK_AIR)
-		{
-			xCoord = Main.MAP_WIDTH/2;
-			yCoord = Main.MAP_HEIGHT/2;
-			//Room newRoom = new Room();
-		}
 	}
 	
 	//Code to call when the attack key is pressed
