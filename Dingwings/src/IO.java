@@ -29,18 +29,26 @@ public class IO extends JFrame //JFrame is a window
 	{
 		//Make sure the program actually quits when the window is closed: very important!
 		addWindowListener(new WindowListener(){
+			@Override
 			public void windowActivated(WindowEvent arg0) {}
+			@Override
 			public void windowClosed(WindowEvent arg0) {}
+			@Override
 			public void windowClosing(WindowEvent arg0) {
 				System.exit(0);
 			}
+			@Override
 			public void windowDeactivated(WindowEvent arg0) {}
+			@Override
 			public void windowDeiconified(WindowEvent arg0) {}
+			@Override
 			public void windowIconified(WindowEvent arg0) {}
+			@Override
 			public void windowOpened(WindowEvent arg0) {}
 		});
 		//Handle key presses
 		addKeyListener(new KeyListener(){
+			@Override
 			public void keyPressed(KeyEvent arg0) {
 				try {
 					int key = arg0.getKeyCode();
@@ -64,7 +72,9 @@ public class IO extends JFrame //JFrame is a window
 					}
 				} catch(Exception e) {}
 			}
+			@Override
 			public void keyReleased(KeyEvent arg0) {}
+			@Override
 			public void keyTyped(KeyEvent arg0) {}
 		});
 		width = (2*Main.BLOCKS_LEFT+1)*Main.BLOCK_WIDTH;
