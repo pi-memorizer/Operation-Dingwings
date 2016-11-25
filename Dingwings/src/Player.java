@@ -42,10 +42,10 @@ public class Player
 			}
 			else if (Main.currentRoom.map[x][y]==Main.BLOCK_DOOR)
 			{
-				xCoord = Main.MAP_WIDTH/2;
-				yCoord = Main.MAP_HEIGHT/2;
 				Room newRoom = new Room();
 				Main.currentRoom = newRoom;
+				//xCoord = Main.MAP_WIDTH/2;
+				//yCoord = Main.MAP_HEIGHT/2;
 			}
 		} //TODO add code to which rooms if you walk out
 	}
