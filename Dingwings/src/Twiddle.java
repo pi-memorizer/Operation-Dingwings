@@ -12,17 +12,34 @@ public class Twiddle extends Enemy
 	
 	protected void move()
 	{
-		/*
-		 * move in one direction until hit wall
-		 * reverse direction
-		 * repeat
-		 */
+		if (facingRight)
+		{
+			super.enemyMove(1, 0);
+			if (Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
+			{
+				facingRight = false;
+			}
+		}
+		else
+		{
+			super.enemyMove(-1, 0);
+			if (Main.currentRoom.map[super.xCoord - 1][super.yCoord]==Main.BLOCK_WALL)
+			{
+				facingRight = true;
+			}
+		}
 	}
 	
 	protected void attack()
 	{
 		
-		//if player is in fromt of twiddle
-		Player.health -= super.damage;
+		if (facingRight && (Player.xCoord - super.xCoord == 1))
+		{
+			Player.health -= super.damage;
+		}
+		else if (!facingRight && (Player.xCoord - super.xCoord == -1))
+		{
+			Player.health -= super.damage;
+		}
 	}
 }

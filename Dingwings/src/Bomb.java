@@ -13,7 +13,7 @@ public class Bomb extends Enemy
 	
 	protected void attack()
 	{
-		if ((Math.abs(super.xCoord - Player.xCoord) <= 64) || (Math.abs(super.yCoord - Player.yCoord) <= 64))
+		if ((Math.abs(super.xCoord - Player.xCoord) <= 1) || (Math.abs(super.yCoord - Player.yCoord) <= 1))
 		{
 			Player.health -= super.damage;
 			//remove bomb
