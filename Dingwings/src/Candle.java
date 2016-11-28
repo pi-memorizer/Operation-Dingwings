@@ -15,8 +15,7 @@ public class Candle extends Enemy
 	{
 		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
 		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
-		//int xDist = (Player.xCoord - this.xCoord);
-		//int yDist = (Player.yCoord - this.yCoord);
+		
 		
 		if (xDistAbs >= 5)
 		{
