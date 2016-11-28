@@ -1,7 +1,12 @@
 
 public class Bomb extends Enemy
 {
-
+	@Override
+	public int getSpriteID()
+	{
+		return Main.BOMB_ENEMY;
+	}
+	
 	public Bomb(int x, int y)
 	{
 		//health = 1, damage = 2, moveSpeed = 0

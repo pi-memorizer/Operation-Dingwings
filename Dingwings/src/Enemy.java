@@ -9,6 +9,8 @@ public abstract class Enemy
 	public int xCoord;
 	public int yCoord;
 	
+	public int getSpriteID() {return 0;}
+	
 	public Enemy(int h, int d, int m, int x, int y) //constructor to set health, damage,
 	{										// and the enemy to alive
 		health = h;

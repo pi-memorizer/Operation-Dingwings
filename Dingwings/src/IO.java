@@ -123,6 +123,12 @@ public class IO extends JFrame //JFrame is a window
 		{
 			offscreenG.drawImage(sprites[Main.SPRITE_PLAYER], Main.BLOCKS_LEFT*Main.BLOCK_WIDTH, Main.BLOCKS_UP*Main.BLOCK_WIDTH, this);
 		}
+		for(Enemy e : Main.currentRoom.enemies)
+		{
+			int x = (e.xCoord-Player.xCoord+Main.BLOCKS_LEFT)*Main.BLOCK_WIDTH;
+			int y = (e.yCoord-Player.yCoord+Main.BLOCKS_UP)*Main.BLOCK_WIDTH;
+			offscreenG.drawImage(sprites[e.getSpriteID()], x, y, this);
+		}
 		g.drawImage(offscreenImg,getInsets().left,getInsets().top,this); //draw buffer to screen
 	}
 	

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -14,14 +15,16 @@ public class Room
 	public static HashMap <String, Room> roomMap = new HashMap <String, Room>();
 		// add room to hashamp (each room is predetermined
 		// once we enter a new room, generate room from hashmap
+	
+	public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
+	
 	public Room(int x, int y)
 	{
 		currentRoomX = x;
 		currentRoomY = y;
 		makeRoom();
 		roomMap.put(x + "," + y, this);
-		for(String s : roomMap.keySet())
-			System.out.println(s);
+		enemies.add(new Bomb(5,5));
 	}
 	
 	private void makeRoom()
