@@ -12,7 +12,6 @@ public class Room
 	int [][] map = new int[Main.MAP_WIDTH][Main.MAP_HEIGHT]; //The rooms map array of sprite indices
 	
 	public static HashMap <String, Room> roomMap = new HashMap <String, Room>();
-	//Coord coord = new Coord();
 		// add room to hashamp (each room is predetermined
 		// once we enter a new room, generate room from hashmap
 	public Room()
@@ -54,7 +53,7 @@ public class Room
 		int w = r.nextInt(8); // change this number depending on the number of options. 
 		//Change this number to mess with percentages as well
 		
-		if (Player.xCoord == Main.MAP_WIDTH-1)//take off -2 when we move location of room change
+		if (Player.xCoord == Main.MAP_WIDTH-1)
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the left
 			//########################################################################################
@@ -280,7 +279,7 @@ public class Room
 				}
 		}
 		}
-		else if (Player.xCoord == 0)// change to 0 when we move location of room change
+		else if (Player.xCoord == 0)
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the right
 			//########################################################################################
@@ -507,7 +506,7 @@ public class Room
 				}
 			}
 		}
-		else if (Player.yCoord == Main.MAP_HEIGHT - 1)//remove -1 when we change the location of the room change
+		else if (Player.yCoord == Main.MAP_HEIGHT - 1)
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the top
 			//########################################################################################
@@ -733,7 +732,7 @@ public class Room
 				}
 			}
 		}
-		else if (Player.yCoord == 0)// change to 0 when we change the location of the room change
+		else if (Player.yCoord == 0)
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the bottom
 			//########################################################################################
@@ -959,8 +958,6 @@ public class Room
 				}
 			}
 		}
-		//currentRoomX = Coord.mapX;
-		//currentRoomY = Coord.mapY;
 /*
 		switch(w)
 		{
