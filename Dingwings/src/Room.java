@@ -11,8 +11,8 @@ public class Room
 	public int currentRoomY;
 	int [][] map = new int[Main.MAP_WIDTH][Main.MAP_HEIGHT]; //The rooms map array of sprite indices
 	
-	HashMap <Coord, Room> roomMap = new HashMap <Coord, Room>();
-	Coord coord = new Coord();
+	public static HashMap <String, Room> roomMap = new HashMap <String, Room>();
+	//Coord coord = new Coord();
 		// add room to hashamp (each room is predetermined
 		// once we enter a new room, generate room from hashmap
 	public Room()
@@ -1306,5 +1306,6 @@ public class Room
 				}
 		}
 		*/
+		
 	}
 }

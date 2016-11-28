@@ -68,6 +68,8 @@ public class IO extends JFrame //JFrame is a window
 								Player.moveRight();
 							if(key==Main.ATTACK_KEY)
 								Player.attack();
+							if(key==Main.RANGED_KEY)
+								Player.ranged();
 						}
 					}
 				} catch(Exception e) {}

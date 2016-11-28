@@ -22,6 +22,7 @@ public class Main
 	public static final int LEFT_KEY = 'A';
 	public static final int RIGHT_KEY = 'D';
 	public static final int ATTACK_KEY = ' '; //Spacebar
+	public static final int RANGED_KEY = 'M';
 	
 	public static Room currentRoom = new Room(); //Will be used later when multiple rooms are available
 	
