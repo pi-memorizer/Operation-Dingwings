@@ -12,14 +12,16 @@ public class Chaser extends Enemy
 	{
 		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
 		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
+		int xDist = (Player.xCoord - this.xCoord);
+		int yDist = (Player.yCoord - this.yCoord);
 		
 		if (xDistAbs > yDistAbs)
 		{
-			//move (Player.xCoord - this.xCoord);
+			super.enemyMove(xDist, 0);
 		}
 		else
 		{
-			//move (Player.yCoord - this.yCoord);
+			super.enemyMove(0, yDist);
 		}
 		/*
 		 * find out if father away from player on x or y, then
