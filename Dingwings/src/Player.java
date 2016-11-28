@@ -41,14 +41,13 @@ public class Player
 				xCoord = x; //actually move
 				yCoord = y;
 			}
-			else if (Main.currentRoom.map[x][y]==Main.BLOCK_DOOR)
-			{
-				Room newRoom = new Room();
-				Main.currentRoom = newRoom;
-				//xCoord = Main.MAP_WIDTH/2;
-				//yCoord = Main.MAP_HEIGHT/2;
-			}
-		} //TODO add code to which rooms if you walk out
+		} else
+		{
+			Room newRoom = new Room();
+			Main.currentRoom = newRoom;
+			//TODO add code to which rooms if you walk out
+			//########################################################
+		}
 	}
 	
 	//Code used when player gets hit by an enemy or projectile
