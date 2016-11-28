@@ -28,7 +28,7 @@ public abstract class Enemy
 		//delete enemy out of list and therefore stop drawing?
 	}
 	
-	public void move(int dx, int dy)
+	public void enemyMove(int dx, int dy)
 	{
 		int x = xCoord+dx;
 		int y = yCoord+dy;
@@ -39,13 +39,10 @@ public abstract class Enemy
 				xCoord = x; //actually move
 				yCoord = y;
 			}
-			else if (Main.currentRoom.map[x][y]==Main.BLOCK_DOOR)
-			{
-				Room newRoom = new Room();
-				Main.currentRoom = newRoom;
-				//xCoord = Main.MAP_WIDTH/2;
-				//yCoord = Main.MAP_HEIGHT/2;
-			}
-		} //TODO add code to which rooms if you walk out
+			//else if (Main.currentRoom.map[x][y]==Main.BLOCK_WALL)
+			//{
+				
+			//}
+		} 
 	}
 } //end Enemy class
