@@ -6,9 +6,7 @@ public class Spawner extends Enemy
 	public Spawner(int x, int y)
 	{
 		//health = 2, damage = 0, moveSpeed = 2
-		super(2, 0, 2);
-		super.xCoord = x;
-		super.yCoord = y;
+		super(2, 0, 2, x, y);
 	}
 	
 	protected void move()

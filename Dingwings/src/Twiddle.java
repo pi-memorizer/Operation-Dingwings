@@ -1,14 +1,13 @@
 			//scissors enemy
 public class Twiddle extends Enemy 
 {
-
+	private boolean facingRight;
 	public Twiddle(int x, int y)
 	{
 		//you can't kill them, so ridiculously large health or something
 		//health = MANY, damage = 1, moveSpeed = 3
-		super(999, 1, 3);
-		super.xCoord = x;
-		super.yCoord = y;
+		super(999, 1, 3, x, y);
+		facingRight = true;
 	}
 	
 	protected void move()
@@ -22,7 +21,8 @@ public class Twiddle extends Enemy
 	
 	protected void attack()
 	{
+		
 		//if player is in fromt of twiddle
-		//player health -= damage
+		Player.health -= super.damage;
 	}
 }
