@@ -5,9 +5,7 @@ public class Chaser extends Enemy
 	public Chaser(int x, int y) 
 	{
 		//health = 3, damage = 1, moveSpeed = 1
-		super(3, 1, 1);
-		super.xCoord = x;
-		super.yCoord = y;
+		super(3, 1, 1, x, y);
 	}
 	
 	protected void move()
