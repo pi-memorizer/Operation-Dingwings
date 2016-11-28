@@ -11,7 +11,7 @@ public class Main
 	public static final int MAP_HEIGHT = 20; //Map array height
 	
 	//Sprite info
-	public static final int NUM_SPRITES = 11; //Total number of sprites
+	public static final int NUM_SPRITES = 12; //Total number of sprites
 	public static final int BLOCK_AIR = 0; //Sprite ID for blank space
 	public static final int BLOCK_WALL = 1; //Sprite ID for some placeholder wall
 	public static final int SPRITE_PLAYER = 2; //Sprite ID for the player
@@ -23,6 +23,7 @@ public class Main
 	public static final int TWIDDLE_ENEMY = 8;
 	public static final int PROJECTILE_CANDLE = 9;
 	public static final int PROJECTILE_RANGE_ATTACK = 10;
+	public static final int PROJECTILE_BOSS = 11;
 	
 	//Key bindings
 	public static final int UP_KEY = 'W'; //Can later be changed for arrow keys
@@ -50,6 +51,7 @@ public class Main
 		io.tryImg(TWIDDLE_ENEMY, "Enemy1-DoubleQuotes");
 		io.tryImg(PROJECTILE_CANDLE, "Projectile-R");
 		io.tryImg(PROJECTILE_RANGE_ATTACK, "Projectile-Q");
+		io.tryImg(PROJECTILE_BOSS, "Projectile-]");
 		
 		while(true) //Game loop
 		{
