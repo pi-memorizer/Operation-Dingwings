@@ -50,7 +50,7 @@ public class Main
 		io.tryImg(SPAWNER_ENEMY, "Enemy1-1");
 		io.tryImg(TWIDDLE_ENEMY, "Enemy1-DoubleQuotes");
 		io.tryImg(PROJECTILE_CANDLE, "Projectile-R");
-		io.tryImg(PROJECTILE_RANGE_ATTACK, "Projectile-Q");
+		io.tryImg(PROJECTILE_RANGE_ATTACK, "New Projectile");
 		io.tryImg(PROJECTILE_BOSS, "Projectile-]");
 		
 		while(true) //Game loop
