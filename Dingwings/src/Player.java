@@ -73,6 +73,7 @@ public class Player
 		}
 	}
 	
+		
 	//Code to call when the attack key is pressed
 	public static void attack()
 	{

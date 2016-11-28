@@ -13,6 +13,31 @@ public class Candle extends Enemy
 	
 	protected void attack()
 	{
+		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
+		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
+		
+		if (xDistAbs >= 5)
+		{
+			if (Player.xCoord >= this.xCoord)
+			{
+				//Make new projectile going to the right
+			}
+			else
+			{
+				//Make new projectile going to the left
+			}
+		}
+		else if (yDistAbs >= 5)
+		{
+			if (Player.yCoord >= this.yCoord)
+			{
+				//Make new projectile going up
+			}
+			else
+			{
+				//Make new projectile going down
+			}
+		}
 		//fire projectile towards player if within 4-5 spaces
 	}
 }

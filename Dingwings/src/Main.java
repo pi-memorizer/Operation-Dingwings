@@ -1,3 +1,4 @@
+import java.util.*;
 public class Main
 {
 	//Reece changing stuff
@@ -25,6 +26,8 @@ public class Main
 	
 	public static Room currentRoom = new Room(0,0); //Will be used later when multiple rooms are available
 	
+	public static ArrayList<Enemy> enemies;
+	
 	public static void main(String [] args)
 	{
 		IO io = new IO(); //Get the graphics and key press handling
@@ -38,6 +41,7 @@ public class Main
 			long _c = System.currentTimeMillis(); //Time at which frame started
 			
 			//TODO game loop logic here
+			enemies = new ArrayList<>();
 			
 			//if player touches enemy or player touches projectile
 				//player.loselife
