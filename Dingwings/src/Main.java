@@ -10,11 +10,10 @@ public class Main
 	public static final int MAP_HEIGHT = 20; //Map array height
 	
 	//Sprite info
-	public static final int NUM_SPRITES = 4; //Total number of sprites
+	public static final int NUM_SPRITES = 3; //Total number of sprites
 	public static final int BLOCK_AIR = 0; //Sprite ID for blank space
 	public static final int BLOCK_WALL = 1; //Sprite ID for some placeholder wall
 	public static final int SPRITE_PLAYER = 2; //Sprite ID for the player
-	public static final int BLOCK_DOOR = 3; //Sprite ID for the door block
 	
 	//Key bindings
 	public static final int UP_KEY = 'W'; //Can later be changed for arrow keys
@@ -22,6 +21,7 @@ public class Main
 	public static final int LEFT_KEY = 'A';
 	public static final int RIGHT_KEY = 'D';
 	public static final int ATTACK_KEY = ' '; //Spacebar
+	public static final int RANGED_KEY = 'M';
 	
 	public static Room currentRoom = new Room(); //Will be used later when multiple rooms are available
 	
@@ -31,7 +31,6 @@ public class Main
 		io.tryImg(BLOCK_AIR, "Air"); //do this for all sprites, assuming it is in "images/air.png"
 		io.tryImg(BLOCK_WALL, "Wall");
 		io.tryImg(SPRITE_PLAYER, "Player-J");
-		io.tryImg(BLOCK_DOOR, "Door");
 		
 		while(true) //Game loop
 		{
