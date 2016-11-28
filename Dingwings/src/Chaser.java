@@ -35,7 +35,7 @@ public class Chaser extends Enemy
 	{
 		if ((Player.xCoord == this.xCoord) && (Player.yCoord == this.yCoord))
 		{
-			Player.loseLife(this.damage);
+			Player.health -= super.damage;
 		}
 		//if within one space or on the same space
 		//player health -= damage

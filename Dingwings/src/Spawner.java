@@ -34,23 +34,28 @@ public class Spawner extends Enemy
 			int val = r.nextInt(5);
 			if (val == 0)
 			{
-				//spawn candle
+				Candle candle = new Candle(super.xCoord + 1, super.yCoord + 1);
+				Main.enemies.add(candle);
 			}
 			else if (val == 1)
 			{
-				//spawn bomb
+				Bomb bomb = new Bomb(super.xCoord + 1, super.yCoord + 1);
+				Main.enemies.add(bomb);
 			}
 			else if (val == 2)
 			{
-				//spawn twiddle
+				Twiddle twiddle = new Twiddle(super.xCoord + 1, super.yCoord + 1);
+				Main.enemies.add(twiddle);
 			}
 			else if (val == 3)
 			{
-				//spawn chaser
+				Chaser chaser = new Chaser(super.xCoord + 1, super.yCoord + 1);
+				Main.enemies.add(chaser);
 			}
 			else if (val == 4)
 			{
-				//spawn spawner
+				Spawner spawner = new Spawner(super.xCoord + 1, super.yCoord + 1);
+				Main.enemies.add(spawner);
 			}
 		}
 	}
