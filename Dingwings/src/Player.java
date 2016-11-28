@@ -1,6 +1,7 @@
 public class Player
 {
 	public static int health = 5;
+	public static int lives = 5;
 	
 	public static int xCoord = Main.MAP_WIDTH/2; //The player's position in the x direction
 	public static int yCoord = Main.MAP_HEIGHT/2; //Same for y
@@ -50,6 +51,12 @@ public class Player
 		} //TODO add code to which rooms if you walk out
 	}
 	
+	//Code used when player gets hit by an enemy or projectile
+	public static void loseLife(int damage)
+	{
+		lives -= damage;
+	}
+		
 	//Code to call when the attack key is pressed
 	public static void attack()
 	{
