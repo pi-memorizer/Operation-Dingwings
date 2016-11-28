@@ -54,13 +54,12 @@ public class Room
 		int w = r.nextInt(8); // change this number depending on the number of options. 
 		//Change this number to mess with percentages as well
 		
-		if (Player.xCoord == Main.MAP_WIDTH-2)//take off -2 when we move location of room change
+		if (Player.xCoord == Main.MAP_WIDTH-1)//take off -2 when we move location of room change
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the left
 			//########################################################################################
 		{
-			//Coord.mapX = Coord.mapX - 1;
-			Player.xCoord = 0;
+			Player.xCoord = 1;
 			switch(w)
 			{
 			case 0: {//initialize with walls on all sides but left has pathway
@@ -281,13 +280,13 @@ public class Room
 				}
 		}
 		}
-		else if (Player.xCoord == 1)// change to 0 when we move location of room change
+		else if (Player.xCoord == 0)// change to 0 when we move location of room change
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the right
 			//########################################################################################
 		{
 			//Coord.mapX = Coord.mapX + 1;
-			Player.xCoord = Main.MAP_WIDTH-1;
+			Player.xCoord = Main.MAP_WIDTH-2;
 			switch(w)
 			{
 			case 0: {//initialize with walls on all sides but right has pathway
@@ -508,13 +507,12 @@ public class Room
 				}
 			}
 		}
-		else if (Player.yCoord == Main.MAP_HEIGHT - 2)//remove -1 when we change the location of the room change
+		else if (Player.yCoord == Main.MAP_HEIGHT - 1)//remove -1 when we change the location of the room change
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the top
 			//########################################################################################
 		{
-			//Coord.mapY = Coord.mapY + 1;
-			Player.yCoord = 0;
+			Player.yCoord = 1;
 			switch(w)
 			{
 			case 0: {//initialize with walls on all sides but top has pathway
@@ -735,13 +733,12 @@ public class Room
 				}
 			}
 		}
-		else if (Player.yCoord == 1)// change to 0 when we change the location of the room change
+		else if (Player.yCoord == 0)// change to 0 when we change the location of the room change
 			//########################################################################################
 			//this will be used to only generate rooms with openings on the bottom
 			//########################################################################################
 		{
-			//Coord.mapY = Coord.mapY - 1;
-			Player.yCoord = Main.MAP_HEIGHT-1;
+			Player.yCoord = Main.MAP_HEIGHT-2;
 			switch(w)
 			{
 			case 0: {//initialize with walls on all sides but bottom has pathway
