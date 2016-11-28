@@ -14,7 +14,17 @@ public class Room
 	public static HashMap <String, Room> roomMap = new HashMap <String, Room>();
 		// add room to hashamp (each room is predetermined
 		// once we enter a new room, generate room from hashmap
-	public Room()
+	public Room(int x, int y)
+	{
+		currentRoomX = x;
+		currentRoomY = y;
+		makeRoom();
+		roomMap.put(x + "," + y, this);
+		for(String s : roomMap.keySet())
+			System.out.println(s);
+	}
+	
+	private void makeRoom()
 	{
 		if (Player.xCoord == Main.MAP_WIDTH/2 && Player.yCoord == Main.MAP_HEIGHT/2)
 		{
