@@ -4,6 +4,9 @@ public class Player
 	
 	public static int xCoord = Main.MAP_WIDTH/2; //The player's position in the x direction
 	public static int yCoord = Main.MAP_HEIGHT/2; //Same for y
+	public static int xMap = 0;
+	public static int yMap = 0;
+	
 	
 	public static int direction = 0;
 	public static final int UP = 0;
@@ -52,8 +55,19 @@ public class Player
 			}
 		} else
 		{
-			Room newRoom = new Room();
+			Room newRoom = Room.roomMap.get((dx+xMap) + "," + (dy+yMap));
+			if(newRoom==null)
+			{
+				newRoom = new Room(dx+xMap,dy+yMap);
+				System.out.println("Hi");
+			}
 			Main.currentRoom = newRoom;
+			xMap += dx;
+			yMap += dy;
+			if(dx==-1) xCoord = Main.MAP_WIDTH -1;
+			if(dx==1) xCoord = 0;
+			if(dy==-1) yCoord = Main.MAP_HEIGHT -1;
+			if(dy==1) yCoord = 0;
 			//TODO add code to which rooms if you walk out
 			//########################################################
 		}

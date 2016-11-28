@@ -23,7 +23,7 @@ public class Main
 	public static final int ATTACK_KEY = ' '; //Spacebar
 	public static final int RANGED_KEY = 'M';
 	
-	public static Room currentRoom = new Room(); //Will be used later when multiple rooms are available
+	public static Room currentRoom = new Room(0,0); //Will be used later when multiple rooms are available
 	
 	public static void main(String [] args)
 	{
