@@ -64,10 +64,10 @@ public class Player
 			Main.currentRoom = newRoom;
 			xMap += dx;
 			yMap += dy;
-			if(dx==-1) xCoord = Main.MAP_WIDTH -1;
-			if(dx==1) xCoord = 0;
-			if(dy==-1) yCoord = Main.MAP_HEIGHT -1;
-			if(dy==1) yCoord = 0;
+			if(dx==-1) xCoord = Main.MAP_WIDTH -2;
+			if(dx==1) xCoord = 1;
+			if(dy==-1) yCoord = Main.MAP_HEIGHT -2;
+			if(dy==1) yCoord = 1;
 			//TODO add code to which rooms if you walk out
 			//########################################################
 		}
