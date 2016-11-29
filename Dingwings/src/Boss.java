@@ -5,7 +5,6 @@ public class Boss extends Enemy
 	ArrayList<Chaser> chasers = new ArrayList<>(3);
 	private boolean right;
 	private boolean up;
-	private boolean switchDirections;
 	
 	public Boss(int x, int y)
 	{
@@ -13,7 +12,6 @@ public class Boss extends Enemy
 		super(8, 1, 2, x, y);
 		right = true;
 		up = false;
-		switchDirections = false;
 	}
 	
 	protected void move()
@@ -62,13 +60,20 @@ public class Boss extends Enemy
 	
 	protected void attack()
 	{
+		spawnChasers();
 		//shoot projectiles in one or two patterns
 	}
 	
 	protected void spawnChasers()
 	{
-		//add three chasers into boss's arraylist
-		//will need a check somewhere for when that arraylist is empty 
-		//to spawn 3 more
+		if (chasers.size() == 0)
+		{
+		Chaser c1 = new Chaser(super.xCoord - 2, super.yCoord);
+		Chaser c2 = new Chaser(super.xCoord, super.yCoord -2);
+		Chaser c3 = new Chaser(super.xCoord + 2, super.yCoord);
+		chasers.add(c1);
+		chasers.add(c2);
+		chasers.add(c3);
+		}
 	}
 }
