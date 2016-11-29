@@ -25,11 +25,6 @@ public abstract class Enemy
 	
 	protected abstract void attack(); //each enemy will have its own attack, but some may not
 	
-	protected void removeEnemy()
-	{
-		//delete enemy out of list and therefore stop drawing?
-	}
-	
 	public void enemyMove(int dx, int dy)
 	{
 		int x = xCoord+dx;
