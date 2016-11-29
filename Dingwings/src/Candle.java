@@ -1,6 +1,7 @@
-
+import java.util.ArrayList;
 public class Candle extends Enemy 
 {
+	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 	@Override
 	public int getSpriteID()
 	{
@@ -21,28 +22,27 @@ public class Candle extends Enemy
 		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
 		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
 		
-		if (xDistAbs >= 5)
+		if (xDistAbs >= 4)
 		{
 			if (Player.xCoord >= this.xCoord)
 			{
-				//Make new projectile going to the right
+				projectiles.add(new Projectile(this.xCoord, this.yCoord, 1));
 			}
 			else
 			{
-				//Make new projectile going to the left
+				projectiles.add(new Projectile(this.xCoord, this.yCoord, 3));
 			}
 		}
-		else if (yDistAbs >= 5)
+		else if (yDistAbs >= 4)
 		{
 			if (Player.yCoord >= this.yCoord)
 			{
-				//Make new projectile going up
+				projectiles.add(new Projectile(this.xCoord, this.yCoord, 4));
 			}
 			else
 			{
-				//Make new projectile going down
+				projectiles.add(new Projectile(this.xCoord, this.yCoord, 2));
 			}
 		}
-		//fire projectile towards player if within 4-5 spaces
 	}
 }

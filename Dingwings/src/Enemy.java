@@ -11,6 +11,11 @@ public abstract class Enemy
 	
 	public int getSpriteID() {return 0;}
 	
+	public Enemy()
+	{
+		//Created this for the Projectile class, needed enemyMove method
+	}
+	
 	public Enemy(int h, int d, int m, int x, int y) //constructor to set health, damage,
 	{										// and the enemy to alive
 		health = h;
