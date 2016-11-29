@@ -22,11 +22,18 @@ public class Chaser extends Enemy
 		
 		if (xDistAbs > yDistAbs)
 		{
-			super.enemyMove(xDist, 0);
+			//Reece you're an idiot - if you move by xDist it could move like 6
+			if (xDist < 0)
+				super.enemyMove(1, 0);
+			else
+				super.enemyMove(-1, 0);
 		}
 		else
 		{
-			super.enemyMove(0, yDist);
+			if (yDist < 0)
+				super.enemyMove(0, 1);
+			else
+				super.enemyMove(0, -1);
 		}
 		/*
 		 * find out if father away from player on x or y, then
