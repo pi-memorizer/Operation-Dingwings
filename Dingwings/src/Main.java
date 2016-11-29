@@ -5,8 +5,8 @@ public class Main
 	public static final int KEY_DELAY = 50; //Minimum amount of milliseconds to wait before accepting key
 	public static final int FRAME_DELAY = 50; //Milliseconds per frame
 	public static final int BLOCK_WIDTH = 64; //Pixel width of sprites
-	public static final int BLOCKS_LEFT = 5; //Amount of blocks to the left and right of the player
-	public static final int BLOCKS_UP = 3; //Amount of blocks to the top and bottom of the player
+	public static final int BLOCKS_LEFT = 7; //Amount of blocks to the left and right of the player
+	public static final int BLOCKS_UP = 5; //Amount of blocks to the top and bottom of the player
 	public static final int MAP_WIDTH = 20; //Map array length
 	public static final int MAP_HEIGHT = 20; //Map array height
 	
@@ -35,8 +35,6 @@ public class Main
 	
 	public static Room currentRoom = new Room(0,0); //Will be used later when multiple rooms are available
 	
-	public static ArrayList<Enemy> enemies;
-	
 	public static void main(String [] args)
 	{
 		IO io = new IO(); //Get the graphics and key press handling
@@ -59,7 +57,21 @@ public class Main
 			long _c = System.currentTimeMillis(); //Time at which frame started
 			
 			//TODO game loop logic here
-			enemies = new ArrayList<>();
+			for(int i = 0; i < currentRoom.enemies.size(); i++)
+			{
+				Enemy e = currentRoom.enemies.get(i);
+				int x = e.xCoord;
+				int y = e.yCoord;
+				boolean dead = false;
+				if(e.health<=0) dead = true; else e.move();
+				if(e.health<=0) dead = true; else if(x==e.xCoord&&y==e.yCoord)
+					e.attack();
+				if(dead||e.health<=0)
+				{
+					currentRoom.enemies.remove(i);
+					i--;
+				}
+			}
 			
 			//if player touches enemy or player touches projectile
 				//player.loselife

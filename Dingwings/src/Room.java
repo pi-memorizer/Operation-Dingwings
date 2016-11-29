@@ -25,6 +25,11 @@ public class Room
 		makeRoom();
 		roomMap.put(x + "," + y, this);
 		enemies.add(new Bomb(5,5));
+		enemies.add(new Candle(10,5));
+		enemies.add(new Boss(5,10));
+		enemies.add(new Spawner(10,10));
+		enemies.add(new Twiddle(1,1));
+		enemies.add(new Chaser(10,1));
 	}
 	
 	private void makeRoom()

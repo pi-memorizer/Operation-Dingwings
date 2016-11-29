@@ -1,6 +1,7 @@
 
 public class Chaser extends Enemy 
 {
+	int delay = 5;
 	@Override
 	public int getSpriteID()
 	{
@@ -10,23 +11,29 @@ public class Chaser extends Enemy
 	public Chaser(int x, int y) 
 	{
 		//health = 3, damage = 1, moveSpeed = 1
-		super(3, 1, 1, x, y);
+		super(3, 1, 25, x, y);
 	}
 	
 	protected void move()
 	{
-		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
-		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
-		int xDist = (Player.xCoord - this.xCoord);
-		int yDist = (Player.yCoord - this.yCoord);
-		
-		if (xDistAbs > yDistAbs)
+		if(delay>=moveSpeed)
 		{
-			super.enemyMove(xDist, 0);
-		}
-		else
-		{
-			super.enemyMove(0, yDist);
+			int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
+			int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
+			int xDist = (Player.xCoord - this.xCoord);
+			int yDist = (Player.yCoord - this.yCoord);
+			
+			if (xDistAbs > yDistAbs)
+			{
+				super.enemyMove(xDist, 0);
+			}
+			else
+			{
+				super.enemyMove(0, yDist);
+			}
+		delay = 0;
+		} else {
+			delay++;
 		}
 		/*
 		 * find out if father away from player on x or y, then

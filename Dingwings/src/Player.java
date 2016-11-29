@@ -48,7 +48,16 @@ public class Player
 		int y = yCoord+dy;
 		if(x >=0 && y>=0 && x<Main.MAP_WIDTH && y<Main.MAP_HEIGHT) //make sure that's vaild
 		{
-			if(Main.currentRoom.map[x][y]==Main.BLOCK_AIR) //see if you can walk there
+			boolean b = true;
+			for(Enemy e : Main.currentRoom.enemies)
+			{
+				if(e.xCoord==x&&e.yCoord==y)
+				{
+					b = false;
+					break;
+				}
+			}
+			if(Main.currentRoom.map[x][y]==Main.BLOCK_AIR&&b) //see if you can walk there
 			{
 				xCoord = x; //actually move
 				yCoord = y;
@@ -59,7 +68,6 @@ public class Player
 			if(newRoom==null)
 			{
 				newRoom = new Room(dx+xMap,dy+yMap);
-				System.out.println("Hi");
 			}
 			Main.currentRoom = newRoom;
 			xMap += dx;
@@ -96,7 +104,13 @@ public class Player
 	
 	public static void attack(int dx, int dy)
 	{
-		
+		for(Enemy e : Main.currentRoom.enemies)
+		{
+			if(e.xCoord==(xCoord+dx)&&e.yCoord==(yCoord+dy))
+			{
+				e.health--;
+			}
+		}
 	}
 	
 	public static void ranged()
