@@ -976,6 +976,46 @@ public class Room
 				}
 			}
 		}
+		Room r1 = Room.roomMap.get((Player.xMap-1) + "," + Player.yMap);
+		if (r1 != null)
+		{
+			int block = Main.BLOCK_AIR;
+			if (r1.exitLeft==false)
+			{
+				block = Main.BLOCK_WALL;
+			}
+			map[0][Main.MAP_HEIGHT/2] = block;
+		}
+		r1 = Room.roomMap.get((Player.xMap+1) + "," + Player.yMap);
+		if (r1 != null)
+		{
+			int block = Main.BLOCK_AIR;
+			if(r1.exitRight==false)
+			{
+				block = Main.BLOCK_WALL;
+			}
+			map[Main.MAP_WIDTH-1][Main.MAP_HEIGHT/2] = block;
+		}
+		r1 = Room.roomMap.get(Player.xMap + "," + (Player.yMap-1));
+		if (r1 != null)
+		{
+			int block = Main.BLOCK_AIR;
+			if(r1.exitTop==false)
+			{
+				block = Main.BLOCK_WALL;
+			}
+			map[Main.MAP_WIDTH/2][0] = block;
+		}
+		r1 = Room.roomMap.get(Player.xMap + "," + (Player.yMap+1));
+		if (r1 != null)
+		{
+			int block = Main.BLOCK_AIR;
+			if(r1.exitBottom==false)
+			{
+				block = Main.BLOCK_WALL;
+			}
+			map[Main.MAP_WIDTH/2][Main.MAP_HEIGHT-1] = block;
+		}
 /*
 		switch(w)
 		{
