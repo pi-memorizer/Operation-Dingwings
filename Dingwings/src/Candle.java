@@ -1,7 +1,12 @@
 
 public class Candle extends Enemy 
 {
-
+	@Override
+	public int getSpriteID()
+	{
+		return Main.CANDLE_ENEMY;
+	}
+	
 	public Candle(int x, int y)
 	{
 		//health = 2, damage = 1, moveSpeed = 0

@@ -1,6 +1,11 @@
 
 public class Chaser extends Enemy 
 {
+	@Override
+	public int getSpriteID()
+	{
+		return Main.CHASER_ENEMY;
+	}
 	
 	public Chaser(int x, int y) 
 	{

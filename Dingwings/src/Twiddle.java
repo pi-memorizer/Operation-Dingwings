@@ -1,6 +1,12 @@
 			//scissors enemy
 public class Twiddle extends Enemy 
 {
+	@Override
+	public int getSpriteID()
+	{
+		return Main.TWIDDLE_ENEMY;
+	}
+	
 	private boolean facingRight;
 	public Twiddle(int x, int y)
 	{
