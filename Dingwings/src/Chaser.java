@@ -15,10 +15,10 @@ public class Chaser extends Enemy
 	
 	protected void move()
 	{
-		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
-		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
-		int xDist = (Player.xCoord - this.xCoord);
-		int yDist = (Player.yCoord - this.yCoord);
+		int xDistAbs = Math.abs(Player.xCoord - super.xCoord);
+		int yDistAbs = Math.abs(Player.yCoord - super.yCoord);
+		int xDist = (Player.xCoord - super.xCoord);
+		int yDist = (Player.yCoord - super.yCoord);
 		
 		if (xDistAbs > yDistAbs)
 		{
@@ -35,21 +35,13 @@ public class Chaser extends Enemy
 			else
 				super.enemyMove(0, -1);
 		}
-		/*
-		 * find out if father away from player on x or y, then
-		 * move close in that direction
-		 * pause
-		 * repeat
-		 */
 	}
 	
 	protected void attack()
 	{
-		if ((Player.xCoord == this.xCoord) && (Player.yCoord == this.yCoord))
+		if (Math.abs(Player.xCoord - super.xCoord) == 1 || Math.abs(Player.yCoord - super.yCoord) == 1)
 		{
 			Player.health -= super.damage;
 		}
-		//if within one space or on the same space
-		//player health -= damage
 	}
 }
