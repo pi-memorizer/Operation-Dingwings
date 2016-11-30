@@ -13,8 +13,6 @@ public class Room
 	int [][] map = new int[Main.MAP_WIDTH][Main.MAP_HEIGHT]; //The rooms map array of sprite indices
 	
 	public static HashMap <String, Room> roomMap = new HashMap <String, Room>();
-		// add room to hashamp (each room is predetermined
-		// once we enter a new room, generate room from hashmap
 	
 	public ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	
@@ -1015,6 +1013,27 @@ public class Room
 				block = Main.BLOCK_WALL;
 			}
 			map[Main.MAP_WIDTH/2][Main.MAP_HEIGHT-1] = block;
+		}
+		int numberOfExits = 0;
+		if (map[Main.MAP_WIDTH/2][Main.MAP_HEIGHT-1] == Main.BLOCK_AIR)
+		{
+			numberOfExits += 1;
+		}
+		if (map[Main.MAP_WIDTH/2][0] == Main.BLOCK_AIR)
+		{
+			numberOfExits += 1;
+		}
+		if (map[Main.MAP_WIDTH-1][Main.MAP_HEIGHT/2] == Main.BLOCK_AIR)
+		{
+			numberOfExits += 1;
+		}
+		if (map[0][Main.MAP_HEIGHT/2] == Main.BLOCK_AIR)
+		{
+			numberOfExits += 1;
+		}
+		if (numberOfExits == 1)
+		{
+			//SPAWN A BOSS IN THE ROOM
 		}
 /*
 		switch(w)

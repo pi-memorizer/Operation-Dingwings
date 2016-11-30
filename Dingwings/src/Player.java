@@ -13,7 +13,6 @@ public class Player
 	public static final int DOWN = 1;
 	public static final int LEFT = 2;
 	public static final int RIGHT = 3;
-	//TODO implement coordinates for which room the player is in
 	
 	//Called when the player tries to move up
 	public static void moveUp()
@@ -76,8 +75,6 @@ public class Player
 			if(dx==1) xCoord = 1;
 			if(dy==-1) yCoord = Main.MAP_HEIGHT -2;
 			if(dy==1) yCoord = 1;
-			//TODO add code to which rooms if you walk out
-			//########################################################
 		}
 	}
 	
