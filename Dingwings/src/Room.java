@@ -27,7 +27,7 @@ public class Room
 		enemies.add(new Boss(5,10));
 		enemies.add(new Spawner(10,10));
 		enemies.add(new Twiddle(1,1));
-		enemies.add(new Chaser(10,1));
+		enemies.add(new Chaser(15,1));
 	}
 	
 	private void makeRoom()

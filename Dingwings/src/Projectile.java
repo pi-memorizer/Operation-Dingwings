@@ -28,6 +28,11 @@ public class Projectile extends Enemy{
 		direction = d;
 	}
 	
+	@Override
+	public int getSpriteID()
+	{
+		return Main.PROJECTILE_CANDLE;
+	}
 	
 	//Copied from Player class
 	@Override

@@ -26,22 +26,22 @@ public class Candle extends Enemy
 		{
 			if (Player.xCoord >= this.xCoord)
 			{
-				projectiles.add(new Projectile(this.xCoord, this.yCoord, 1));
+				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 1));
 			}
 			else
 			{
-				projectiles.add(new Projectile(this.xCoord, this.yCoord, 3));
+				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 3));
 			}
 		}
 		else if (yDistAbs >= 4)
 		{
 			if (Player.yCoord >= this.yCoord)
 			{
-				projectiles.add(new Projectile(this.xCoord, this.yCoord, 4));
+				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 4));
 			}
 			else
 			{
-				projectiles.add(new Projectile(this.xCoord, this.yCoord, 2));
+				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 2));
 			}
 		}
 	}
