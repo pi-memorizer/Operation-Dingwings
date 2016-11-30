@@ -1033,7 +1033,7 @@ public class Room
 		}
 		if (numberOfExits == 1)
 		{
-			//SPAWN A BOSS IN THE ROOM
+			//TODO SPAWN A BOSS IN THE ROOM
 		}
 /*
 		switch(w)
