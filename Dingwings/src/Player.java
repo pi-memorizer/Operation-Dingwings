@@ -7,12 +7,14 @@ public class Player
 	public static int xMap = 0;
 	public static int yMap = 0;
 	
-	
 	public static int direction = 0;
 	public static final int UP = 0;
 	public static final int DOWN = 1;
 	public static final int LEFT = 2;
 	public static final int RIGHT = 3;
+	
+	public static final int RANGE_DELAY = 10;
+	public static int currentRangeDelay = 0;
 	
 	//Called when the player tries to move up
 	public static void moveUp()
@@ -112,25 +114,35 @@ public class Player
 	
 	public static void ranged()
 	{
-		switch(direction)
+		System.out.println("hi");
+		if (currentRangeDelay > RANGE_DELAY)
 		{
-		case UP:
-			ranged(0,-1);
-			break;
-		case DOWN:
-			ranged(0,1);
-			break;
-		case LEFT:
-			ranged(-1,0);
-			break;
-		case RIGHT:
-			ranged(1,0);
-			break;
+			System.out.println("hi");
+			switch(direction)
+			{
+			case UP:
+				ranged(0,-1);
+				break;
+			case DOWN:
+				ranged(0,1);
+				break;
+			case LEFT:
+				ranged(-1,0);
+				break;
+			case RIGHT:
+				ranged(1,0);
+				break;
+			}
+			currentRangeDelay = 0;
+		}
+		else
+		{
+			currentRangeDelay++;
 		}
 	}
 	
 	public static void ranged(int dx, int dy)
 	{
-		
+		Main.currentRoom.enemies.add(new Player_Projectile(xCoord+dx, yCoord+dy, dx, dy));
 	}
 }
