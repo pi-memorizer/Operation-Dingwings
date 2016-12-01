@@ -23,7 +23,7 @@ public class Boss extends Enemy
 			if (right)
 			{
 				super.enemyMove(1, 0);
-				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
+				if (super.xCoord > 0 && Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
 				{
 					right = false;
 				}
@@ -31,7 +31,7 @@ public class Boss extends Enemy
 			else
 			{
 				super.enemyMove(-1, 0);
-				if (Main.currentRoom.map[super.xCoord - 1][super.yCoord]==Main.BLOCK_WALL)
+				if (super.xCoord > 0 && Main.currentRoom.map[super.xCoord - 1][super.yCoord]==Main.BLOCK_WALL)
 				{
 					right = true;
 				}
@@ -42,7 +42,7 @@ public class Boss extends Enemy
 			if (up)
 			{
 				super.enemyMove(0, 1);
-				if (Main.currentRoom.map[super.xCoord][super.yCoord + 1]==Main.BLOCK_WALL)
+				if (super.yCoord > 0 && Main.currentRoom.map[super.xCoord][super.yCoord + 1]==Main.BLOCK_WALL)
 				{
 					up = false;
 				}
@@ -50,7 +50,7 @@ public class Boss extends Enemy
 			else
 			{
 				super.enemyMove(0, -1);
-				if (Main.currentRoom.map[super.xCoord][super.yCoord - 1]==Main.BLOCK_WALL)
+				if (super.yCoord > 0 && Main.currentRoom.map[super.xCoord][super.yCoord - 1]==Main.BLOCK_WALL)
 				{
 					up = true;
 				}
