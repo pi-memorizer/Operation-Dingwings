@@ -1017,23 +1017,23 @@ public class Room
 			{
 				block = Main.BLOCK_WALL;
 				exitBottom = false;
-			} else exitTop = true;
+			} else exitBottom = true;
 			map[Main.MAP_WIDTH/2][Main.MAP_HEIGHT-1] = block;
 		}
 		int numberOfExits = 0;
-		if (map[Main.MAP_WIDTH/2][Main.MAP_HEIGHT-1] == Main.BLOCK_AIR)
+		if (exitRight)
 		{
 			numberOfExits += 1;
 		}
-		if (map[Main.MAP_WIDTH/2][0] == Main.BLOCK_AIR)
+		if (exitLeft)
 		{
 			numberOfExits += 1;
 		}
-		if (map[Main.MAP_WIDTH-1][Main.MAP_HEIGHT/2] == Main.BLOCK_AIR)
+		if (exitTop)
 		{
 			numberOfExits += 1;
 		}
-		if (map[0][Main.MAP_HEIGHT/2] == Main.BLOCK_AIR)
+		if (exitBottom)
 		{
 			numberOfExits += 1;
 		}
