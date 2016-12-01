@@ -81,7 +81,13 @@ public class Main
 					{
 						currentRoom.enemies.remove(i);
 						i--;
+						if(e instanceof Boss)
+							gameState = WIN_STATE;
 					}
+				}
+				if(Player.health<=0)
+				{
+					gameState = LOSE_STATE;
 				}
 			}
 			//if player touches enemy or player touches projectile
