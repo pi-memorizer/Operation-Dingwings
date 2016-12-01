@@ -993,33 +993,33 @@ public class Room
 			} else exitLeft = true;
 			map[0][Main.MAP_HEIGHT/2] = block;
 		}
-		r1 = Room.roomMap.get((Player.xMap+1) + "," + Player.yMap);
-		if (r1 != null)
+		Room r2 = Room.roomMap.get((Player.xMap+1) + "," + Player.yMap);
+		if (r2 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if(r1.exitLeft==false)
+			if(r2.exitLeft==false)
 			{
 				block = Main.BLOCK_WALL;
 				exitRight = false;
 			} else exitRight = true;
 			map[Main.MAP_WIDTH-1][Main.MAP_HEIGHT/2] = block;
 		}
-		r1 = Room.roomMap.get(Player.xMap + "," + (Player.yMap-1));
-		if (r1 != null)
+		Room r3 = Room.roomMap.get(Player.xMap + "," + (Player.yMap-1));
+		if (r3 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if(r1.exitBottom==false)
+			if(r3.exitBottom==false)
 			{
 				block = Main.BLOCK_WALL;
 				exitTop = false;
 			} else exitTop = true;
 			map[Main.MAP_WIDTH/2][0] = block;
 		}
-		r1 = Room.roomMap.get(Player.xMap + "," + (Player.yMap+1));
-		if (r1 != null)
+		Room r4 = Room.roomMap.get(Player.xMap + "," + (Player.yMap+1));
+		if (r4 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if(r1.exitTop==false)
+			if(r4.exitTop==false)
 			{
 				block = Main.BLOCK_WALL;
 				exitBottom = false;

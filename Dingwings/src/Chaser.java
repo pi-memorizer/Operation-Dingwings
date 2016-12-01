@@ -37,7 +37,7 @@ public class Chaser extends Enemy
 	
 	protected void attack()
 	{
-		if (Math.abs(Player.xCoord - super.xCoord) == 1 || Math.abs(Player.yCoord - super.yCoord) == 1)
+		if (Math.abs(Player.xCoord - super.xCoord) <= 1 && Math.abs(Player.yCoord - super.yCoord) <= 1)
 		{
 			Player.health -= super.damage;
 		}

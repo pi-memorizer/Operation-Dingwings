@@ -155,7 +155,8 @@ public class IO extends JFrame //JFrame is a window
 		{
 			offscreenG.setColor(Color.black);
 			offscreenG.drawString("You win!", 0, 20);
-		} else if(Main.gameState==Main.LOSE_STATE)
+		} 
+		else if(Main.gameState==Main.LOSE_STATE)
 		{
 			offscreenG.setColor(Color.black);
 			offscreenG.drawString("You lose.", 0, 20);
