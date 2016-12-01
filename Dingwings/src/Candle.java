@@ -30,22 +30,17 @@ public class Candle extends Enemy
 		{
 			if (distance < 4)
 			{
-				if (Player.xCoord > this.xCoord)
-				{
-					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 1));
-				}
-				else if (Player.xCoord < this.xCoord)
-				{
-					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 3));
-				}
-				else if (Player.yCoord > this.yCoord)
-				{
-					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 4));
-				}
-				else
-				{
-					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 2));
-				}
+				int dx = 0;
+				int dy = 0;
+				if(Player.xCoord>xCoord)
+					dx = 1;
+				else if(Player.xCoord<xCoord)
+					dx = -1;
+				if(Player.yCoord>yCoord)
+					dy = 1;
+				else if(Player.yCoord<yCoord)
+					dy = -1;
+				Main.currentRoom.enemies.add(new Projectile(xCoord,yCoord,dx,dy));
 			}
 			currentDelay = 0;
 		}
