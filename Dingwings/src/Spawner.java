@@ -19,14 +19,14 @@ public class Spawner extends Enemy
 	protected void move()
 	{
 		Random r = new Random();
-		int num = r.nextInt(4);
-		if (num == 0)
+		int num = r.nextInt(4000);
+		if (num < 1000)
 			enemyMove(1,0);
-		else if (num == 1)
+		else if (num < 2000)
 			enemyMove(-1, 0);
-		else if (num == 2)
+		else if (num < 3000)
 			enemyMove(0,1);
-		else if (num == 3)
+		else if (num < 4000)
 			enemyMove(0, -1);
 	}
 	
