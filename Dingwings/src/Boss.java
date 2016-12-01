@@ -9,7 +9,7 @@ public class Boss extends Enemy
 	public Boss(int x, int y)
 	{
 		//health = 8, damage = 1, moveSpeed = 2
-		super(8, 1, 2, x, y);
+		super(8, 4, 2, x, y);
 		right = true;
 		up = false;
 	}
@@ -21,6 +21,7 @@ public class Boss extends Enemy
 	protected void move()
 	{
 		Random r = new Random();
+		if(r.nextInt(20)!=0) return;
 		int val = r.nextInt(1000);
 		if (val < 500)
 		{
@@ -65,7 +66,10 @@ public class Boss extends Enemy
 	protected void attack()
 	{
 		spawnChasers();
-		//shoot projectiles in one or two patterns
+		if(xCoord==Player.xCoord&&yCoord==Player.yCoord)
+		{
+			Player.health -= damage;
+		}
 	}
 	
 	protected void spawnChasers()
@@ -78,6 +82,9 @@ public class Boss extends Enemy
 		chasers.add(c1);
 		chasers.add(c2);
 		chasers.add(c3);
+		Main.currentRoom.enemies.add(c1);
+		Main.currentRoom.enemies.add(c2);
+		Main.currentRoom.enemies.add(c3);
 		}
 	}
 }

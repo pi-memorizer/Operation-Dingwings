@@ -87,7 +87,7 @@ public class Main
 				}
 				if(Player.health<=0)
 				{
-					gameState = LOSE_STATE;
+					//gameState = LOSE_STATE;
 				}
 			}
 			

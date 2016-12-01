@@ -142,7 +142,7 @@ public class IO extends JFrame //JFrame is a window
 				int y = (e.yCoord-Player.yCoord+Main.BLOCKS_UP)*Main.BLOCK_WIDTH;
 				offscreenG.drawImage(sprites[e.getSpriteID()], x, y, this);
 			}
-			for(int i = 0; i < Player.health/10; i++)
+			for(int i = 0; i < Player.health/20; i++)
 			{
 				offscreenG.drawImage(sprites[Main.SPRITE_HEART], 32*i,0,32,32,this);
 			}
