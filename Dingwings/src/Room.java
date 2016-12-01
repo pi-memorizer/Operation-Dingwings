@@ -1047,6 +1047,10 @@ public class Room
 		{
 			//TODO SPAWN A BOSS IN THE ROOM
 			Boss lastBoss = new Boss (Main.MAP_WIDTH/2, Main.MAP_HEIGHT/2);
+			for (Enemy enemy: Main.currentRoom.enemies)
+			{
+			Main.currentRoom.enemies.remove(enemy);
+			}
 			Main.currentRoom.enemies.add(lastBoss);
 		}
 /*
