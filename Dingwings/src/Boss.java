@@ -13,7 +13,11 @@ public class Boss extends Enemy
 		right = true;
 		up = false;
 	}
-	
+	@Override
+	public int getSpriteID()
+	{
+		return Main.BOSS_ENEMY;
+	}
 	protected void move()
 	{
 		Random r = new Random();
@@ -23,7 +27,7 @@ public class Boss extends Enemy
 			if (right)
 			{
 				super.enemyMove(1, 0);
-				if (xCoord<Main.MAP_WIDTH-1 && Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
+				if (xCoord<Main.MAP_WIDTH-2 && Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
 				{
 					right = false;
 				}
@@ -42,7 +46,7 @@ public class Boss extends Enemy
 			if (up)
 			{
 				super.enemyMove(0, 1);
-				if (yCoord<Main.MAP_HEIGHT-1 && Main.currentRoom.map[super.xCoord][super.yCoord + 1]==Main.BLOCK_WALL)
+				if (yCoord<Main.MAP_HEIGHT-2 && Main.currentRoom.map[super.xCoord][super.yCoord + 1]==Main.BLOCK_WALL)
 				{
 					up = false;
 				}

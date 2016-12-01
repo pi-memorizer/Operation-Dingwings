@@ -66,7 +66,7 @@ public class Room
 			exitRight = true;
 		}
 		Random r = new Random();
-		int w = r.nextInt(8); // change this number depending on the number of options. 
+		int w = r.nextInt(10); // change this number depending on the number of options. 
 		//Change this number to mess with percentages as well
 		
 		if (Player.xCoord == Main.MAP_WIDTH-1)
@@ -77,7 +77,9 @@ public class Room
 			Player.xCoord = 1;
 			switch(w)
 			{
-			case 0: {//initialize with walls on all sides but left has pathway
+			case 0:
+			case 8:
+			case 9:{//initialize with walls on all sides but left has pathway
 				for(int x = 0; x < Main.MAP_WIDTH; x++)
 				{
 					for(int y = 0; y < Main.MAP_HEIGHT; y++)
@@ -304,7 +306,9 @@ public class Room
 			Player.xCoord = Main.MAP_WIDTH-2;
 			switch(w)
 			{
-			case 0: {//initialize with walls on all sides but right has pathway
+			case 0:
+			case 8:
+			case 9:{//initialize with walls on all sides but right has pathway
 				for(int x = 0; x < Main.MAP_WIDTH; x++)
 				{
 					for(int y = 0; y < Main.MAP_HEIGHT; y++)
@@ -530,7 +534,9 @@ public class Room
 			Player.yCoord = 1;
 			switch(w)
 			{
-			case 0: {//initialize with walls on all sides but top has pathway
+			case 0:
+			case 8:
+			case 9:{//initialize with walls on all sides but top has pathway
 				for(int x = 0; x < Main.MAP_WIDTH; x++)
 				{
 					for(int y = 0; y < Main.MAP_HEIGHT; y++)
@@ -756,7 +762,9 @@ public class Room
 			Player.yCoord = Main.MAP_HEIGHT-2;
 			switch(w)
 			{
-			case 0: {//initialize with walls on all sides but bottom has pathway
+			case 0:
+			case 8:
+			case 9:{//initialize with walls on all sides but bottom has pathway
 				for(int x = 0; x < Main.MAP_WIDTH; x++)
 				{
 					for(int y = 0; y < Main.MAP_HEIGHT; y++)

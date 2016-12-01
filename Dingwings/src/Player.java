@@ -1,6 +1,6 @@
 public class Player
 {
-	public static int health = 5;
+	public static int health = 30;
 	
 	public static int xCoord = Main.MAP_WIDTH/2; //The player's position in the x direction
 	public static int yCoord = Main.MAP_HEIGHT/2; //Same for y

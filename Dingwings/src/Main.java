@@ -9,8 +9,15 @@ public class Main
 	public static final int MAP_WIDTH = 20; //Map array length
 	public static final int MAP_HEIGHT = 20; //Map array height
 	
+	public static final int PLAY_STATE = 0;
+	public static final int WIN_STATE = 1;
+	public static final int LOSE_STATE = 2;
+	public static final int START_STATE = 3;
+	
+	public static int gameState = START_STATE;
+	
 	//Sprite info
-	public static final int NUM_SPRITES = 12; //Total number of sprites
+	public static final int NUM_SPRITES = 13; //Total number of sprites
 	public static final int BLOCK_AIR = 0; //Sprite ID for blank space
 	public static final int BLOCK_WALL = 1; //Sprite ID for some placeholder wall
 	public static final int SPRITE_PLAYER = 2; //Sprite ID for the player
@@ -23,6 +30,7 @@ public class Main
 	public static final int PROJECTILE_CANDLE = 9;
 	public static final int PROJECTILE_RANGE_ATTACK = 10;
 	public static final int PROJECTILE_BOSS = 11;
+	public static final int SPRITE_HEART = 12;
 	
 	//Key bindings
 	public static final int UP_KEY = 'W'; //Can later be changed for arrow keys
@@ -49,6 +57,7 @@ public class Main
 		io.tryImg(PROJECTILE_CANDLE, "Projectile-R");
 		io.tryImg(PROJECTILE_RANGE_ATTACK, "New Projectile");
 		io.tryImg(PROJECTILE_BOSS, "Projectile-]");
+		io.tryImg(SPRITE_HEART, "Life-[");
 		
 		while(true) //Game loop
 		{
@@ -56,21 +65,36 @@ public class Main
 			long _c = System.currentTimeMillis(); //Time at which frame started
 			
 			//TODO game loop logic here
-			for(int i = 0; i < currentRoom.enemies.size(); i++)
+			
+			if(gameState==PLAY_STATE)
 			{
-				Enemy e = currentRoom.enemies.get(i);
-				int x = e.xCoord;
-				int y = e.yCoord;
-				boolean dead = false;
-				if(e.health<=0) dead = true; else e.move();
-				if(e.health<=0) dead = true; else if(x==e.xCoord&&y==e.yCoord)
-					e.attack();
-				if(dead||e.health<=0)
+				for(int i = 0; i < currentRoom.enemies.size(); i++)
 				{
-					currentRoom.enemies.remove(i);
-					i--;
+					Enemy e = currentRoom.enemies.get(i);
+					int x = e.xCoord;
+					int y = e.yCoord;
+					boolean dead = false;
+					if(e.health<=0) dead = true; else e.move();
+					if(e.health<=0) dead = true; else if(x==e.xCoord&&y==e.yCoord)
+						e.attack();
+					if(dead||e.health<=0)
+					{
+						currentRoom.enemies.remove(i);
+						i--;
+						if(e instanceof Boss)
+							gameState = WIN_STATE;
+					}
+				}
+				if(Player.health<=0)
+				{
+					gameState = LOSE_STATE;
 				}
 			}
+<<<<<<< HEAD
+=======
+			//if player touches enemy or player touches projectile
+				//player.loselife
+>>>>>>> master
 			//if player.lives == 0
 				//endGame();
 			

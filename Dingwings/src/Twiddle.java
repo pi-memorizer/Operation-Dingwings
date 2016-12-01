@@ -21,7 +21,7 @@ public class Twiddle extends Enemy
 		if (facingRight)
 		{
 			super.enemyMove(1, 0);
-			if (Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
+			if (xCoord<Main.MAP_WIDTH-2 && Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
 			{
 				facingRight = false;
 			}
@@ -29,7 +29,7 @@ public class Twiddle extends Enemy
 		else
 		{
 			super.enemyMove(-1, 0);
-			if (Main.currentRoom.map[super.xCoord - 1][super.yCoord]==Main.BLOCK_WALL)
+			if (super.xCoord > 0 && Main.currentRoom.map[super.xCoord - 1][super.yCoord]==Main.BLOCK_WALL)
 			{
 				facingRight = true;
 			}
@@ -39,11 +39,11 @@ public class Twiddle extends Enemy
 	protected void attack()
 	{
 		
-		if (facingRight && (Player.xCoord - super.xCoord == 1))
+		if (facingRight && (Player.xCoord - super.xCoord == 0))
 		{
 			Player.health -= super.damage;
 		}
-		else if (!facingRight && (Player.xCoord - super.xCoord == -1))
+		else if (!facingRight && (Player.xCoord - super.xCoord == 0))
 		{
 			Player.health -= super.damage;
 		}

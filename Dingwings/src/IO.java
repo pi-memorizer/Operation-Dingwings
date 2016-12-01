@@ -58,18 +58,27 @@ public class IO extends JFrame //JFrame is a window
 						if(System.currentTimeMillis()-clock>=Main.KEY_DELAY) //Make sure you can actually press a key
 						{
 							clock = System.currentTimeMillis(); //New last key press time
-							if(key==Main.UP_KEY)
-								Player.moveUp();
-							if(key==Main.LEFT_KEY)
-								Player.moveLeft();
-							if(key==Main.DOWN_KEY)
-								Player.moveDown();
-							if(key==Main.RIGHT_KEY)
-								Player.moveRight();
-							if(key==Main.ATTACK_KEY)
-								Player.attack();
-							if(key==Main.RANGED_KEY)
-								Player.ranged();
+							if(Main.gameState==Main.PLAY_STATE)
+							{
+								if(key==Main.UP_KEY)
+									Player.moveUp();
+								if(key==Main.LEFT_KEY)
+									Player.moveLeft();
+								if(key==Main.DOWN_KEY)
+									Player.moveDown();
+								if(key==Main.RIGHT_KEY)
+									Player.moveRight();
+								if(key==Main.ATTACK_KEY)
+									Player.attack();
+								if(key==Main.RANGED_KEY)
+									Player.ranged();
+							} else if(Main.gameState==Main.START_STATE)
+							{
+								if(key==' ')
+								{
+									Main.gameState = Main.PLAY_STATE;
+								}
+							}
 						}
 					}
 				} catch(Exception e) {}
@@ -103,32 +112,53 @@ public class IO extends JFrame //JFrame is a window
 	{
 		offscreenG.setColor(Color.white);
 		offscreenG.fillRect(0, 0, width, height); //clear buffer
-		//Draw each surrounding block
-		for(int x = Player.xCoord-Main.BLOCKS_LEFT, _x = 0; x <= Player.xCoord+Main.BLOCKS_LEFT; x++, _x++)
+		
+		if(Main.gameState==Main.PLAY_STATE)
 		{
-			for(int y = Player.yCoord-Main.BLOCKS_UP, _y = 0; y <= Player.yCoord+Main.BLOCKS_UP; y++, _y++)
+			//Draw each surrounding block
+			for(int x = Player.xCoord-Main.BLOCKS_LEFT, _x = 0; x <= Player.xCoord+Main.BLOCKS_LEFT; x++, _x++)
 			{
-				if(x>=0&&y>=0&&x<Main.MAP_WIDTH&&y<Main.MAP_HEIGHT)
+				for(int y = Player.yCoord-Main.BLOCKS_UP, _y = 0; y <= Player.yCoord+Main.BLOCKS_UP; y++, _y++)
 				{
-					BufferedImage sprite = sprites[Main.currentRoom.map[x][y]];
-					if(sprite!=null)
+					if(x>=0&&y>=0&&x<Main.MAP_WIDTH&&y<Main.MAP_HEIGHT)
 					{
-						offscreenG.drawImage(sprite, _x*Main.BLOCK_WIDTH, _y*Main.BLOCK_WIDTH, this);
+						BufferedImage sprite = sprites[Main.currentRoom.map[x][y]];
+						if(sprite!=null)
+						{
+							offscreenG.drawImage(sprite, _x*Main.BLOCK_WIDTH, _y*Main.BLOCK_WIDTH, this);
+						}
 					}
 				}
 			}
-		}
-		//Draw the player to middle of screen if possible
-		if(sprites[Main.SPRITE_PLAYER]!=null)
+			//Draw the player to middle of screen if possible
+			if(sprites[Main.SPRITE_PLAYER]!=null)
+			{
+				offscreenG.drawImage(sprites[Main.SPRITE_PLAYER], Main.BLOCKS_LEFT*Main.BLOCK_WIDTH, Main.BLOCKS_UP*Main.BLOCK_WIDTH, this);
+			}
+			for(int i = 0; i < Main.currentRoom.enemies.size(); i++)
+			{
+				Enemy e = Main.currentRoom.enemies.get(i);
+				int x = (e.xCoord-Player.xCoord+Main.BLOCKS_LEFT)*Main.BLOCK_WIDTH;
+				int y = (e.yCoord-Player.yCoord+Main.BLOCKS_UP)*Main.BLOCK_WIDTH;
+				offscreenG.drawImage(sprites[e.getSpriteID()], x, y, this);
+			}
+			for(int i = 0; i < Player.health/10; i++)
+			{
+				offscreenG.drawImage(sprites[Main.SPRITE_HEART], 32*i,0,32,32,this);
+			}
+		} else if(Main.gameState==Main.START_STATE)
 		{
-			offscreenG.drawImage(sprites[Main.SPRITE_PLAYER], Main.BLOCKS_LEFT*Main.BLOCK_WIDTH, Main.BLOCKS_UP*Main.BLOCK_WIDTH, this);
-		}
-		for(int i = 0; i < Main.currentRoom.enemies.size(); i++)
+			offscreenG.setColor(Color.black);
+			offscreenG.drawString("OPERATION: DINGWINGS", 0, 20);
+			offscreenG.drawString("Press space to play", 0, 60);
+		} else if(Main.gameState==Main.WIN_STATE)
 		{
-			Enemy e = Main.currentRoom.enemies.get(i);
-			int x = (e.xCoord-Player.xCoord+Main.BLOCKS_LEFT)*Main.BLOCK_WIDTH;
-			int y = (e.yCoord-Player.yCoord+Main.BLOCKS_UP)*Main.BLOCK_WIDTH;
-			offscreenG.drawImage(sprites[e.getSpriteID()], x, y, this);
+			offscreenG.setColor(Color.black);
+			offscreenG.drawString("You win!", 0, 20);
+		} else if(Main.gameState==Main.LOSE_STATE)
+		{
+			offscreenG.setColor(Color.black);
+			offscreenG.drawString("You lose.", 0, 20);
 		}
 		g.drawImage(offscreenImg,getInsets().left,getInsets().top,this); //draw buffer to screen
 	}
