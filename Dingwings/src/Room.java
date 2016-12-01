@@ -978,7 +978,7 @@ public class Room
 		if (r1 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if (r1.exitLeft==false)
+			if (r1.exitRight==false)
 			{
 				block = Main.BLOCK_WALL;
 			}
@@ -988,7 +988,7 @@ public class Room
 		if (r1 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if(r1.exitRight==false)
+			if(r1.exitLeft==false)
 			{
 				block = Main.BLOCK_WALL;
 			}
@@ -998,7 +998,7 @@ public class Room
 		if (r1 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if(r1.exitTop==false)
+			if(r1.exitBottom==false)
 			{
 				block = Main.BLOCK_WALL;
 			}
@@ -1008,7 +1008,7 @@ public class Room
 		if (r1 != null)
 		{
 			int block = Main.BLOCK_AIR;
-			if(r1.exitBottom==false)
+			if(r1.exitTop==false)
 			{
 				block = Main.BLOCK_WALL;
 			}
@@ -1034,6 +1034,8 @@ public class Room
 		if (numberOfExits == 1)
 		{
 			//TODO SPAWN A BOSS IN THE ROOM
+			Boss lastBoss = new Boss (Main.MAP_WIDTH/2, Main.MAP_HEIGHT/2);
+			Main.currentRoom.enemies.add(lastBoss);
 		}
 /*
 		switch(w)
