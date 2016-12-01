@@ -16,8 +16,6 @@ public class Chaser extends Enemy
 	
 	protected void move()
 	{
-		double distance = 0;
-		distance = Math.sqrt((Player.xCoord - this.xCoord)*(Player.xCoord - this.xCoord) + (Player.yCoord - this.yCoord)*(Player.yCoord - this.yCoord));
 		int dx = 0;
 		int dy = 0;
 		if(delay>=moveSpeed)
