@@ -39,11 +39,11 @@ public class Twiddle extends Enemy
 	protected void attack()
 	{
 		
-		if (facingRight && (Player.xCoord - super.xCoord == 1))
+		if (facingRight && (Player.xCoord - super.xCoord == 0))
 		{
 			Player.health -= super.damage;
 		}
-		else if (!facingRight && (Player.xCoord - super.xCoord == -1))
+		else if (!facingRight && (Player.xCoord - super.xCoord == 0))
 		{
 			Player.health -= super.damage;
 		}
