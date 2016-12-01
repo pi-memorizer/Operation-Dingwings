@@ -3,7 +3,7 @@ public class Candle extends Enemy
 {
 	//ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
 	//Use the enemy ArrayList in Room
-	public final int PROJECTILE_DELAY = 10; //Need to change this with play-testing
+	public final int PROJECTILE_DELAY = 20; //Need to change this with play-testing
 	public int currentDelay; //Time since last projectile
 	
 	@Override
@@ -23,24 +23,22 @@ public class Candle extends Enemy
 	
 	protected void attack()
 	{ 
-		int xDistAbs = Math.abs(this.xCoord - Player.xCoord);
-		int yDistAbs = Math.abs(this.yCoord - Player.yCoord);
+		double distance = 0;
+		distance = Math.sqrt((Player.xCoord - this.xCoord)*(Player.xCoord - this.xCoord) + (Player.yCoord - this.yCoord)*(Player.yCoord - this.yCoord));
+		
 		if (currentDelay > PROJECTILE_DELAY)
 		{
-			if (xDistAbs < 2)
+			if (distance < 4)
 			{
 				if (Player.xCoord > this.xCoord)
 				{
 					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 1));
 				}
-				else
+				else if (Player.xCoord < this.xCoord)
 				{
 					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 3));
 				}
-			}
-			else if (yDistAbs < 2)
-			{
-				if (Player.yCoord > this.yCoord)
+				else if (Player.yCoord > this.yCoord)
 				{
 					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 4));
 				}

@@ -6,9 +6,7 @@
  */
 public class Projectile extends Enemy{
 	public String projectileSprite;
-	public static int xCoord;
-	public static int yCoord;
-	public static int direction;
+	public int direction;
 	
 	public Projectile()
 	{
@@ -38,6 +36,8 @@ public class Projectile extends Enemy{
 	@Override
 	protected void move()
 	{
+		int _x = xCoord;
+		int _y = yCoord;
 		switch (direction)
 		{
 			case 1:
@@ -54,6 +54,10 @@ public class Projectile extends Enemy{
 				break;
 			default:
 				super.enemyMove(0, 0);
+		}
+		if(_x==xCoord&&_y==yCoord)
+		{
+			health = 0;
 		}
 		/*
 		int x = xCoord+dx;
