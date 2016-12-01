@@ -1,12 +1,10 @@
 
 public class Player_Projectile extends Enemy{
-	public String projectileSprite;
-	public int dx, dy, xCoord, yCoord;
+	public int dx, dy;
 	
 	public Player_Projectile()
 	{
 		super();
-		projectileSprite = "New Projectile";
 		xCoord = 0;
 		yCoord = 0;
 	}
@@ -14,7 +12,6 @@ public class Player_Projectile extends Enemy{
 	public Player_Projectile(int startXPos, int startYPos, int dx, int dy)
 	{
 		super(1, 1, 1, startXPos, startYPos);
-		projectileSprite = "New Projectile";
 		xCoord = startXPos;
 		yCoord = startYPos;
 		this.dx = dx;
@@ -37,8 +34,9 @@ public class Player_Projectile extends Enemy{
 			{
 				xCoord = x; //actually move
 				yCoord = y;
-			}
+			} else health = 0;
 		} else health = 0;
+		attack();
 	}
 	
 	@Override
@@ -46,7 +44,7 @@ public class Player_Projectile extends Enemy{
 	{
 		for(Enemy e : Main.currentRoom.enemies)
 		{
-			if(e.xCoord==(xCoord)&&e.yCoord==(yCoord))
+			if(e!=this&&e.xCoord==(xCoord)&&e.yCoord==(yCoord))
 			{
 				e.health--;
 				health = 0;

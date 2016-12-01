@@ -13,8 +13,8 @@ public class Player
 	public static final int LEFT = 2;
 	public static final int RIGHT = 3;
 	
-	public static final int RANGE_DELAY = 10;
-	public static int currentRangeDelay = 0;
+	public static final int RANGE_DELAY = 500;
+	public static long lastRangeDelay = 0;
 	
 	//Called when the player tries to move up
 	public static void moveUp()
@@ -114,10 +114,8 @@ public class Player
 	
 	public static void ranged()
 	{
-		System.out.println("hi");
-		if (currentRangeDelay > RANGE_DELAY)
+		if (System.currentTimeMillis() >= RANGE_DELAY+lastRangeDelay)
 		{
-			System.out.println("hi");
 			switch(direction)
 			{
 			case UP:
@@ -133,16 +131,12 @@ public class Player
 				ranged(1,0);
 				break;
 			}
-			currentRangeDelay = 0;
-		}
-		else
-		{
-			currentRangeDelay++;
+			lastRangeDelay = System.currentTimeMillis();
 		}
 	}
 	
 	public static void ranged(int dx, int dy)
 	{
-		Main.currentRoom.enemies.add(new Player_Projectile(xCoord+dx, yCoord+dy, dx, dy));
+		Main.currentRoom.enemies.add(new Player_Projectile(xCoord, yCoord, dx, dy));
 	}
 }
