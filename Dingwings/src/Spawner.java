@@ -35,7 +35,7 @@ public class Spawner extends Enemy
 		//5% chance to spawn a random enemy in front of spawner
 		Random r = new Random();
 		int num = r.nextInt(100);
-		if (num < 4)
+		if (num < 4&&xCoord+1<Main.MAP_WIDTH-1&&yCoord+1<Main.MAP_HEIGHT-1)
 		{
 			int val = r.nextInt(5);
 			if (val == 0)
