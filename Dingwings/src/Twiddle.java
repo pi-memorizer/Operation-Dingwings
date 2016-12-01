@@ -21,7 +21,7 @@ public class Twiddle extends Enemy
 		if (facingRight)
 		{
 			super.enemyMove(1, 0);
-			if (xCoord<Main.MAP_WIDTH-2 && Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
+			if (xCoord<Main.MAP_WIDTH-1 && Main.currentRoom.map[super.xCoord + 1][super.yCoord]==Main.BLOCK_WALL)
 			{
 				facingRight = false;
 			}
