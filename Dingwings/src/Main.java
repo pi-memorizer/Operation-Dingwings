@@ -71,9 +71,6 @@ public class Main
 					i--;
 				}
 			}
-			
-			//if player touches enemy or player touches projectile
-				//player.loselife
 			//if player.lives == 0
 				//endGame();
 			
