@@ -13,7 +13,11 @@ public class Boss extends Enemy
 		right = true;
 		up = false;
 	}
-	
+	@Override
+	public int getSpriteID()
+	{
+		return Main.BOSS_ENEMY;
+	}
 	protected void move()
 	{
 		Random r = new Random();
