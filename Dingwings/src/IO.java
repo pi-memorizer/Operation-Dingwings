@@ -53,7 +53,7 @@ public class IO extends JFrame //JFrame is a window
 				try {
 					int key = arg0.getKeyCode();
 					//make sure a valid key is being pressed so that it doesn't change the timing for random keys
-					if(key==Main.UP_KEY||key==Main.LEFT_KEY||key==Main.DOWN_KEY||key==Main.RIGHT_KEY||key==Main.ATTACK_KEY)
+					if(key==Main.UP_KEY||key==Main.LEFT_KEY||key==Main.DOWN_KEY||key==Main.RIGHT_KEY||key==Main.ATTACK_KEY||key==Main.RANGED_KEY)
 					{
 						if(System.currentTimeMillis()-clock>=Main.KEY_DELAY) //Make sure you can actually press a key
 						{
