@@ -18,10 +18,53 @@ public class Room
 	
 	public Room(int x, int y)
 	{
+		Random r = new Random();
+		int num = r.nextInt(3);
+		if (num == 0)
+			enemies1();
+		else if (num == 1)
+			enemies2();
+		else if (num == 2)
+			enemies3();
+		
 		currentRoomX = x;
 		currentRoomY = y;
 		makeRoom();
 		roomMap.put(x + "," + y, this);
+	}
+	
+	private void enemies1()
+	{
+		Candle c = new Candle(16, 16);
+		Candle c2 = new Candle(4,4);
+		Chaser ch = new Chaser(10,1);
+		enemies.add(c);
+		enemies.add(c2);
+		enemies.add(ch);
+	}
+	
+	private void enemies2()
+	{
+		Spawner s = new Spawner(1, 10);
+		Spawner s2 = new Spawner(18, 10);
+		Bomb b = new Bomb(10, 5);
+		Bomb b2 = new Bomb(10, 15);
+		enemies.add(s);
+		enemies.add(s2);
+		enemies.add(b);
+		enemies.add(b2);
+	}
+	
+	private void enemies3()
+	{
+		Twiddle t = new Twiddle(1, 4);
+		Twiddle t2 = new Twiddle(1, 16);
+		Chaser c = new Chaser(18,18);
+		Spawner s = new Spawner(10, 1);
+		enemies.add(t);
+		enemies.add(t2);
+		enemies.add(c);
+		enemies.add(s);
 	}
 	
 	private void makeRoom()
