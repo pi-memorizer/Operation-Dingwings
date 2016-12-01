@@ -90,13 +90,6 @@ public class Main
 					gameState = LOSE_STATE;
 				}
 			}
-<<<<<<< HEAD
-=======
-			//if player touches enemy or player touches projectile
-				//player.loselife
->>>>>>> master
-			//if player.lives == 0
-				//endGame();
 			
 			long c_ = System.currentTimeMillis(); //Time at which frame ended
 			if(c_-_c<FRAME_DELAY) //Frame lock magic
