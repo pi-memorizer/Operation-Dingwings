@@ -40,28 +40,43 @@ public class Spawner extends Enemy
 			int val = r.nextInt(5);
 			if (val == 0)
 			{
+				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord + 1] == Main.BLOCK_AIR)
+				{
 				Candle candle = new Candle(super.xCoord + 1, super.yCoord + 1);
 				Main.currentRoom.enemies.add(candle);
+				}
 			}
 			else if (val == 1)
 			{
+				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord + 1] == Main.BLOCK_AIR)
+				{
 				Bomb bomb = new Bomb(super.xCoord + 1, super.yCoord + 1);
 				Main.currentRoom.enemies.add(bomb);
+				}
 			}
 			else if (val == 2)
 			{
+				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord + 1] == Main.BLOCK_AIR)
+				{
 				Twiddle twiddle = new Twiddle(super.xCoord + 1, super.yCoord + 1);
 				Main.currentRoom.enemies.add(twiddle);
+				}
 			}
 			else if (val == 3)
 			{
+				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord + 1] == Main.BLOCK_AIR)
+				{
 				Chaser chaser = new Chaser(super.xCoord + 1, super.yCoord + 1);
 				Main.currentRoom.enemies.add(chaser);
+				}
 			}
 			else if (val == 4)
 			{
+				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord + 1] == Main.BLOCK_AIR)
+				{
 				Spawner spawner = new Spawner(super.xCoord + 1, super.yCoord + 1);
 				Main.currentRoom.enemies.add(spawner);
+				}
 			}
 		}
 	}
