@@ -1,7 +1,11 @@
-import java.util.ArrayList;
+//import java.util.ArrayList;
 public class Candle extends Enemy 
 {
-	ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
+	//ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
+	//Use the enemy ArrayList in Room
+	public final int PROJECTILE_DELAY = 10; //Need to change this with play-testing
+	public int currentDelay; //Time since last projectile
+	
 	@Override
 	public int getSpriteID()
 	{
@@ -18,31 +22,38 @@ public class Candle extends Enemy
 	{}
 	
 	protected void attack()
-	{
-		int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
-		int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
-		
-		if (xDistAbs >= 4)
+	{ 
+		int xDistAbs = Math.abs(this.xCoord - Player.xCoord);
+		int yDistAbs = Math.abs(this.yCoord - Player.yCoord);
+		if (currentDelay > PROJECTILE_DELAY)
 		{
-			if (Player.xCoord >= this.xCoord)
+			if (xDistAbs < 2)
 			{
-				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 1));
+				if (Player.xCoord > this.xCoord)
+				{
+					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 1));
+				}
+				else
+				{
+					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 3));
+				}
 			}
-			else
+			else if (yDistAbs < 2)
 			{
-				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 3));
+				if (Player.yCoord > this.yCoord)
+				{
+					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 4));
+				}
+				else
+				{
+					Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 2));
+				}
 			}
+			currentDelay = 0;
 		}
-		else if (yDistAbs >= 4)
+		else
 		{
-			if (Player.yCoord >= this.yCoord)
-			{
-				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 4));
-			}
-			else
-			{
-				Main.currentRoom.enemies.add(new Projectile(this.xCoord, this.yCoord, 2));
-			}
+			currentDelay++;
 		}
 	}
 }
