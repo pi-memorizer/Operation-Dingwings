@@ -1,9 +1,3 @@
-/*Direction Information:
- * 1 = Right
- * 2 = Down
- * 3 = Left
- * 4 = Up
- */
 public class Projectile extends Enemy{
 	public String projectileSprite;
 	public int dx, dy;
@@ -32,7 +26,6 @@ public class Projectile extends Enemy{
 		return Main.PROJECTILE_CANDLE;
 	}
 	
-	//Copied from Player class
 	@Override
 	protected void move()
 	{
@@ -43,19 +36,6 @@ public class Projectile extends Enemy{
 		{
 			health = 0;
 		}
-		/*
-		int x = xCoord+dx;
-		int y = yCoord+dy;
-		//Need to fix this so it works
-		if(x>=0&&y>=0&&x<Main.MAP_WIDTH&&y<Main.MAP_HEIGHT) //make sure that's vaild
-		{
-			if(Main.currentRoom.map[x][y]== Main.BLOCK_AIR || Main.currentRoom.map[x][y] == Main.SPRITE_PLAYER) //see if you can walk there
-			{
-				xCoord = x;
-				yCoord = y;
-			}
-		}
-		*/
 	}
 	
 	@Override

@@ -1,8 +1,5 @@
-//import java.util.ArrayList;
 public class Candle extends Enemy 
 {
-	//ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
-	//Use the enemy ArrayList in Room
 	public final int PROJECTILE_DELAY = 20; //Need to change this with play-testing
 	public int currentDelay; //Time since last projectile
 	

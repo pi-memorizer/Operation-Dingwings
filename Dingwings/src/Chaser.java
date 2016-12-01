@@ -31,27 +31,6 @@ public class Chaser extends Enemy
 			else if(Player.yCoord<yCoord)
 				dy = -1;
 			enemyMove(dx, dy);
-			/*
-			int xDistAbs = Math.abs(Player.xCoord - this.xCoord);
-			int yDistAbs = Math.abs(Player.yCoord - this.yCoord);
-			int xDist = (Player.xCoord - this.xCoord);
-			int yDist = (Player.yCoord - this.yCoord);
-			
-			if (xDistAbs > yDistAbs)
-			{
-				if (xDist < 0)
-					super.enemyMove(1, 0);
-				else
-					super.enemyMove(-1, 0);
-			}
-			else
-			{
-				if (yDist < 0)
-					super.enemyMove(0, 1);
-				else
-					super.enemyMove(0, -1);
-			}
-			*/
 		delay = 0;
 		} else {
 			delay++;
