@@ -43,7 +43,7 @@ public class Spawner extends Enemy
 		//5% chance to spawn a random enemy in front of spawner
 		Random r = new Random();
 		int num = r.nextInt(200);
-		if (num < 4&&xCoord+1<Main.MAP_WIDTH-1&&yCoord+1<Main.MAP_HEIGHT-1)
+		if (num < 2 && xCoord+1<Main.MAP_WIDTH-1&&yCoord+1<Main.MAP_HEIGHT-1)
 		{
 			int val = r.nextInt(5);
 			if (val == 0)
@@ -78,14 +78,14 @@ public class Spawner extends Enemy
 				Main.currentRoom.enemies.add(chaser);
 				}
 			}
-			else if (val == 4)
+			/*else if (val == 4)
 			{
 				if (Main.currentRoom.map[super.xCoord + 1][super.yCoord + 1] == Main.BLOCK_AIR)
 				{
 				Spawner spawner = new Spawner(super.xCoord + 1, super.yCoord + 1);
 				Main.currentRoom.enemies.add(spawner);
 				}
-			}
+			} */
 		}
 	}
 }
