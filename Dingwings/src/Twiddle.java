@@ -24,28 +24,28 @@ public class Twiddle extends Enemy
 			if (xCoord<Main.MAP_WIDTH-2 && Main.currentRoom.map[super.xCoord + 2][super.yCoord]==Main.BLOCK_WALL)
 			{
 				facingRight = false;
+			} else if(xCoord==Main.MAP_WIDTH-1) {
+				facingRight = false;
 			}
 		}
 		else
 		{
 			super.enemyMove(-1, 0);
-			if (super.xCoord > 0 && Main.currentRoom.map[super.xCoord - 2][super.yCoord]==Main.BLOCK_WALL)
+			if (xCoord > 1 && Main.currentRoom.map[super.xCoord - 2][super.yCoord]==Main.BLOCK_WALL)
 			{
+				facingRight = true;
+			} else if(xCoord==0) {
 				facingRight = true;
 			}
 		}
+		attack();
 	}
 	
 	protected void attack()
 	{
-		
-		if (facingRight && (Player.xCoord - super.xCoord == 0))
+		if(Player.xCoord==xCoord&&Player.yCoord==yCoord)
 		{
-			Player.health -= super.damage;
-		}
-		else if (!facingRight && (Player.xCoord - super.xCoord == 0))
-		{
-			Player.health -= super.damage;
+			Player.health -= damage;
 		}
 	}
 }

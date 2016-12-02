@@ -65,7 +65,7 @@ public class Main
 			long _c = System.currentTimeMillis(); //Time at which frame started
 			
 			//TODO game loop logic here
-			
+			int _health = Player.health;
 			if(gameState==PLAY_STATE)
 			{
 				for(int i = 0; i < currentRoom.enemies.size(); i++)
@@ -87,9 +87,12 @@ public class Main
 				}
 				if(Player.health<=0)
 				{
-					//gameState = LOSE_STATE;
+					gameState = LOSE_STATE;
 				}
 			}
+			
+			if(Player.health!=_health)
+				Player.damageSound.play();
 			
 			long c_ = System.currentTimeMillis(); //Time at which frame ended
 			if(c_-_c<FRAME_DELAY) //Frame lock magic

@@ -16,6 +16,9 @@ public class Player
 	public static final int RANGE_DELAY = 500;
 	public static long lastRangeDelay = 0;
 	
+	public static final SoundFile damageSound = new SoundFile("sfx/damage.wav",false);
+	public static final SoundFile attackSound = new SoundFile("sfx/attack.wav",false);
+	
 	//Called when the player tries to move up
 	public static void moveUp()
 	{
@@ -84,6 +87,7 @@ public class Player
 	//Code to call when the attack key is pressed
 	public static void attack()
 	{
+		attackSound.play();
 		switch(direction)
 		{
 		case UP:
