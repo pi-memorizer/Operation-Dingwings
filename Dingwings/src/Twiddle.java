@@ -11,8 +11,8 @@ public class Twiddle extends Enemy
 	public Twiddle(int x, int y)
 	{
 		//you can't kill them, so ridiculously large health or something
-		//health = MANY, damage = 1, moveSpeed = 3
-		super(999, 1, 3, x, y);
+		//health = MANY, damage = 8, moveSpeed = 3
+		super(999, 8, 3, x, y);
 		facingRight = true;
 	}
 	

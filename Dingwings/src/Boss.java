@@ -8,7 +8,7 @@ public class Boss extends Enemy
 	
 	public Boss(int x, int y)
 	{
-		//health = 8, damage = 1, moveSpeed = 2
+		//health = 8, damage = 4, moveSpeed = 2
 		super(8, 4, 2, x, y);
 		right = true;
 		up = false;

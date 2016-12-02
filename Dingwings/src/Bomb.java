@@ -9,8 +9,8 @@ public class Bomb extends Enemy
 	
 	public Bomb(int x, int y)
 	{
-		//health = 1, damage = 2, moveSpeed = 0
-		super(1, 2, 0, x, y);
+		//health = 1, damage = 8, moveSpeed = 0
+		super(1, 8, 0, x, y);
 	}
 	
 	protected void move() //they don't move

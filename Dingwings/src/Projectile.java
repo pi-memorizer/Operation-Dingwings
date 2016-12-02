@@ -12,7 +12,7 @@ public class Projectile extends Enemy{
 	
 	public Projectile(int startXPos, int startYPos, int dx, int dy)
 	{
-		super(1, 1, 1, startXPos, startYPos);
+		super(1, 5, 1, startXPos, startYPos);
 		projectileSprite = "Projectile-R";
 		xCoord = startXPos;
 		yCoord = startYPos;
