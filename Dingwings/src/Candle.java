@@ -1,6 +1,6 @@
 public class Candle extends Enemy 
 {
-	public final int PROJECTILE_DELAY = 20; //Need to change this with play-testing
+	public final int PROJECTILE_DELAY = 15; //Need to change this with play-testing
 	public int currentDelay; //Time since last projectile
 	
 	@Override
@@ -25,7 +25,7 @@ public class Candle extends Enemy
 		
 		if (currentDelay > PROJECTILE_DELAY)
 		{
-			if (distance < 4)
+			if (distance < 7)
 			{
 				int dx = 0;
 				int dy = 0;

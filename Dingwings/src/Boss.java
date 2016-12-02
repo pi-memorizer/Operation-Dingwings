@@ -85,6 +85,12 @@ public class Boss extends Enemy
 		Main.currentRoom.enemies.add(c1);
 		Main.currentRoom.enemies.add(c2);
 		Main.currentRoom.enemies.add(c3);
+		Candle candle1 = new Candle(super.xCoord, super.yCoord +2);
+		Candle candle2 = new Candle(super.xCoord+1, super.yCoord-1);
+		Candle candle3 = new Candle(super.xCoord+1, super.yCoord+1);
+		Main.currentRoom.enemies.add(candle1);
+		Main.currentRoom.enemies.add(candle2);
+		Main.currentRoom.enemies.add(candle3);
 		}
 	}
 }
