@@ -36,6 +36,7 @@ public class Projectile extends Enemy{
 		{
 			health = 0;
 		}
+		attack();
 	}
 	
 	@Override

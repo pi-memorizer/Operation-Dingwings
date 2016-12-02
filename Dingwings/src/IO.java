@@ -149,8 +149,22 @@ public class IO extends JFrame //JFrame is a window
 		} else if(Main.gameState==Main.START_STATE)
 		{
 			offscreenG.setColor(Color.black);
-			offscreenG.drawString("OPERATION: DINGWINGS", 0, 20);
-			offscreenG.drawString("Press space to play", 0, 60);
+			String [] text = {
+					"OPERATION: DINGWINGS",
+					"",
+					"Controls:",
+					"WASD - Move",
+					"Space - Melee",
+					"M - Ranged attack",
+					"",
+					"Goal: Defeat the boss DingWing: a skull and cross-bones",
+					"",
+					"Press space to play"
+			};
+			for(int i = 0; i < text.length; i++)
+			{
+				offscreenG.drawString(text[i], 20, 20+20*i);
+			}
 		} else if(Main.gameState==Main.WIN_STATE)
 		{
 			offscreenG.setColor(Color.black);
